@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pertemuan 4: Landasan Pedagogis &amp; Empiris Pendidikan ABK</title>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-canvas: #FFFBF5;
+      --card-bg: #FFFFFF;
+      --text-main: #0B192C;
+      --text-muted: #534538;
+      
+      /* Palet Warna Tema: Dark Blue, Oranye, & Cokelat */
+      --theme-navy: #0B192C;
+      --theme-navy-light: #EBF1F8;
+      --theme-navy-dark: #050E1A;
+      
+      --theme-orange: #EA580C;
+      --theme-orange-light: #FFEDD5;
+      --theme-orange-dark: #C2410C;
+      
+      --theme-brown: #78350F;
+      --theme-brown-light: #F7EFE9;
+      --theme-brown-dark: #451A03;
+      
+      --border-dark: #0B192C;
+      --shadow-solid: 4px 4px 0px #0B192C;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      line-height: 1.65;
+      font-size: 0.98rem;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TOP BAR / NAVIGATION */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(255, 251, 245, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 2px solid var(--border-dark);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .badge-course {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--theme-orange-light);
+      border: 2px solid var(--border-dark);
+      box-shadow: 2px 2px 0 var(--border-dark);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--theme-orange-dark);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.05rem;
+      font-weight: 700;
+      font-size: 0.88rem;
+      border-radius: var(--radius-sm);
+      border: 2px solid var(--border-dark);
+      box-shadow: var(--shadow-solid);
+      transition: all 0.15s ease-in-out;
+      text-decoration: none;
+      color: var(--text-main);
+      background-color: #FFFFFF;
+    }
+
+    .btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px var(--border-dark);
+    }
+
+    .btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--border-dark);
+    }
+
+    .btn-presentation {
+      background-color: var(--theme-navy);
+      color: #FFFFFF;
+    }
+
+    .btn-worksheet {
+      background-color: var(--theme-orange);
+      color: #FFFFFF;
+    }
+
+    /* CONTAINER & HERO */
+    .container {
+      max-width: 1040px;
+      margin: 1.5rem auto;
+      padding: 0 1.5rem 3.5rem 1.5rem;
+    }
+
+    .hero {
+      background: #FFFFFF;
+      border: 2px solid var(--border-dark);
+      box-shadow: var(--shadow-solid);
+      border-radius: var(--radius-md);
+      padding: 2.25rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.85rem;
+    }
+
+    .tag {
+      background: var(--bg-canvas);
+      border: 1.5px solid var(--border-dark);
+      border-radius: 999px;
+      padding: 0.2rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 1fr;
+      gap: 1.75rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.5px;
+      color: var(--theme-navy);
+    }
+
+    .hero p {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .hero-illustration {
+      width: 100%;
+      height: 220px;
+      border-radius: var(--radius-sm);
+      border: 2px solid var(--border-dark);
+      box-shadow: 4px 4px 0px var(--theme-orange);
+      object-fit: cover;
+    }
+
+    /* TIMELINE SECTION */
+    .timeline-card {
+      background: #FFFFFF;
+      border: 2px solid var(--border-dark);
+      box-shadow: var(--shadow-solid);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.75rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.85rem;
+    }
+
+    .time-slot {
+      padding: 0.85rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px dashed var(--border-dark);
+    }
+
+    .time-slot.t1 { background: var(--theme-navy-light); }
+    .time-slot.t2 { background: #FFFFFF; }
+    .time-slot.t3 { background: var(--theme-orange-light); }
+    .time-slot.t4 { background: var(--theme-brown-light); }
+
+    .time-slot .time {
+      font-weight: 800;
+      font-size: 0.85rem;
+      display: inline-block;
+      margin-bottom: 0.2rem;
+      color: var(--theme-navy);
+    }
+
+    .time-slot .title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--theme-brown-dark);
+    }
+
+    /* SECTION CARD */
+    .section-block {
+      background: var(--card-bg);
+      border: 2px solid var(--border-dark);
+      box-shadow: var(--shadow-solid);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 2px solid var(--bg-canvas);
+      padding-bottom: 0.85rem;
+    }
+
+    .section-num {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--theme-navy);
+      color: #FFFFFF;
+      border: 2px solid var(--border-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    h2 { font-size: 1.45rem; font-weight: 800; color: var(--theme-navy); }
+    h3 { font-size: 1.15rem; font-weight: 700; margin: 1.25rem 0 0.5rem 0; color: var(--theme-orange-dark); }
+    p { margin-bottom: 0.85rem; color: #2D241E; }
+
+    /* QUOTE BOX */
+    .quote-box {
+      background-color: var(--theme-orange-light);
+      border-left: 5px solid var(--theme-orange);
+      padding: 1.1rem 1.35rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 1.25rem 0;
+      font-style: italic;
+      color: #431407;
+      border-top: 1px solid #FED7AA;
+      border-right: 1px solid #FED7AA;
+      border-bottom: 1px solid #FED7AA;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .quote-box .citation {
+      display: block;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 0.82rem;
+      margin-top: 0.4rem;
+      color: var(--theme-brown);
+    }
+
+    /* EXAMPLE BOX */
+    .example-box {
+      background-color: #FFFFFF;
+      border: 1.5px solid var(--theme-brown);
+      border-left: 5px solid var(--theme-brown);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.25rem;
+      margin: 1.1rem 0;
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+
+    .example-box strong {
+      color: var(--theme-brown-dark);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    /* GRID LISTS */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.1rem;
+      margin: 1.1rem 0;
+    }
+
+    .feature-item {
+      border: 2px solid var(--border-dark);
+      border-radius: var(--radius-sm);
+      padding: 1.15rem;
+      background: #FFFFFF;
+      box-shadow: 3px 3px 0 var(--border-dark);
+    }
+
+    .feature-item.accent-orange { background: var(--theme-orange-light); }
+    .feature-item.accent-brown { background: var(--theme-brown-light); }
+    .feature-item.accent-navy { background: var(--theme-navy-light); }
+
+    .feature-item strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-size: 1rem;
+      color: var(--theme-navy);
+    }
+
+    ol.detailed-list, ul.detailed-list {
+      padding-left: 1.35rem;
+      margin-bottom: 1rem;
+    }
+
+    ol.detailed-list li, ul.detailed-list li {
+      margin-bottom: 0.5rem;
+      padding-left: 0.25rem;
+    }
+
+    /* GAMES CARD */
+    .game-card {
+      background: #FFFFFF;
+      border: 2px solid var(--border-dark);
+      box-shadow: var(--shadow-solid);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-top: 0.85rem;
+    }
+
+    .quiz-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .quiz-btn {
+      text-align: left;
+      background: #FFFFFF;
+      border: 2px solid var(--border-dark);
+      padding: 0.85rem 1rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 2px 2px 0 var(--border-dark);
+      transition: all 0.1s ease;
+      color: var(--theme-navy);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .quiz-btn:hover {
+      background: var(--theme-orange-light);
+      transform: translate(-1px, -1px);
+    }
+
+    .quiz-feedback {
+      margin-top: 1rem;
+      font-weight: 700;
+      display: none;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      border: 2px solid var(--border-dark);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    /* MODAL OVERLAY */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(11, 25, 44, 0.88);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    .modal-overlay.active { display: flex; }
+
+    /* SLIDE PRESENTATION DECK */
+    .slide-deck {
+      width: 100%;
+      max-width: 1080px;
+      height: 90vh;
+      background-color: #FFFCF7;
+      border: 3px solid #0B192C;
+      border-radius: 18px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 10px 10px 0px var(--theme-orange);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slide-deck-header {
+      background: #FFFFFF;
+      border-bottom: 2px solid var(--border-dark);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .slide-deck-content {
+      flex: 1;
+      padding: 2rem 2.75rem;
+      overflow-y: auto;
+      display: none;
+    }
+
+    .slide-deck-content.active {
+      display: block;
+      animation: fadeIn 0.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .slide-deck-footer {
+      background: #FFFFFF;
+      border-top: 2px solid var(--border-dark);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .slide-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      color: var(--theme-navy);
+    }
+
+    .slide-subtitle {
+      font-size: 1.05rem;
+      color: var(--theme-orange);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .slide-visual-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+
+    .slide-card-box {
+      background: #FFFFFF;
+      border: 2px solid var(--border-dark);
+      border-radius: var(--radius-sm);
+      padding: 1.1rem;
+      box-shadow: 3px 3px 0px var(--theme-navy);
+      margin-bottom: 0.75rem;
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+
+    /* MODAL TAMPILAN EVALUASI & KUNCI */
+    .reading-modal-container {
+      width: 100%;
+      max-width: 920px;
+      height: 90vh;
+      background-color: #FFFFFF;
+      border: 3px solid #000;
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 8px 8px 0px var(--theme-brown);
+      overflow: hidden;
+    }
+
+    .reading-modal-header {
+      background: var(--theme-brown-light);
+      border-bottom: 2px solid var(--border-dark);
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .reading-modal-body {
+      flex: 1;
+      padding: 2rem 2.25rem;
+      overflow-y: auto;
+      background: #FFFFFF;
+      color: #000;
+      font-size: 9.5pt;
+      line-height: 1.6;
+    }
+
+    .lecturer-auth-box {
+      background: #FFF7ED;
+      border: 2px dashed var(--theme-orange);
+      padding: 1rem 1.2rem;
+      border-radius: var(--radius-sm);
+      margin-top: 1.75rem;
+    }
+
+    .answer-key-content {
+      display: none;
+      background: #FEF3C7;
+      border: 2px solid var(--theme-brown);
+      border-radius: var(--radius-sm);
+      padding: 1.1rem;
+      margin-top: 0.85rem;
+    }
+
+    /* PRINT FORMAT */
+    @media print {
+      body * { visibility: hidden; }
+      #printableArea, #printableArea * { visibility: visible; }
+      #printableArea {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: #FFF !important;
+        padding: 12mm 15mm;
+      }
+      .lecturer-auth-box, .site-header, .modal-overlay, .no-print { display: none !important; }
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.65rem; }
+      .hero { padding: 1.25rem; }
+      .section-block { padding: 1.25rem; }
+      .quiz-options { grid-template-columns: 1fr; }
+      .slide-deck-content { padding: 1.25rem; }
+      .slide-title { font-size: 1.5rem; }
+      .slide-visual-grid { grid-template-columns: 1fr; }
+      .reading-modal-body { padding: 1.25rem; }
+      .nav-actions { width: 100%; justify-content: flex-start; }
+      .btn { flex: 1; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SITE HEADER / ACTION BAR -->
+  <header class="site-header no-print">
+    <div class="badge-course">
+      <span>🏛️</span> BK Anak Berkebutuhan Khusus • Pertemuan 4 (2 SKS)
+    </div>
+    <div class="nav-actions">
+      <button class="btn btn-presentation" onclick="openPresentation()">
+        <span>🖥️</span> Slide Presentasi Dosen
+      </button>
+      <button class="btn btn-worksheet" onclick="openReadingModal()">
+        <span>📖</span> Buka Soal Evaluasi &amp; Kunci Dosen
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN DOCUMENT CONTAINER -->
+  <div class="container no-print">
+
+    <!-- HERO BANNER -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-meta">
+            <span class="tag">Mata Kuliah: BK ABK</span>
+            <span class="tag">Alokasi Waktu: 2 SKS (100 Menit)</span>
+            <span class="tag">Tema: Oranye, Cokelat &amp; Dark Blue</span>
+            <span class="tag">Fokus: Bab II Poin A.1 &amp; A.2</span>
+          </div>
+          <h1>Landasan Pedagogis dan Empiris Bimbingan Konseling bagi ABK</h1>
+          <p>Materi pertemuan keempat: menelaah arah filosofis pendidikan nasional berlandaskan Pasal 3 UU Sisdiknas, membedah temuan empiris The National Academy of Science tentang kegagalan segregasi, serta bukti riset Meyer (2001) mengenai keberhasilan lingkungan inklusif bagi persahabatan dan adaptasi sosial ABK[cite: 1].</p>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=700&q=80" alt="Pendidikan Inklusi ABK" class="hero-illustration">
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE RENCANA PERKULIAHAN (100 MENIT) -->
+    <div class="timeline-card">
+      <div class="time-slot t1">
+        <span class="time">10 Menit</span>
+        <div class="title">Warming Up &amp; Pendahuluan</div>
+        <small style="color:var(--text-muted)">Apersepsi filosofis: hakikat manusia berakhlak mulia dan bebas diskriminasi[cite: 1].</small>
+      </div>
+      <div class="time-slot t2">
+        <span class="time">45 Menit</span>
+        <div class="title">Materi Inti Komprehensif</div>
+        <small style="color:var(--text-muted)">Eksplorasi Landasan Pedagogis Sisdiknas &amp; Riset Empiris Inklusi[cite: 1].</small>
+      </div>
+      <div class="time-slot t3">
+        <span class="time">5 Menit</span>
+        <div class="title">Games Interaktif</div>
+        <small style="color:var(--text-muted)">Uji Refleksi: Mengkritisi segregasi vs model lingkungan inklusif[cite: 1].</small>
+      </div>
+      <div class="time-slot t4">
+        <span class="time">40 Menit</span>
+        <div class="title">Evaluasi &amp; Penutup</div>
+        <small style="color:var(--text-muted)">Pengerjaan 10 soal evaluasi mandiri, verifikasi dosen, dan refleksi[cite: 1].</small>
+      </div>
+    </div>
+
+    <!-- SESI 1: PENDAHULUAN (10 MENIT) -->
+    <article class="section-block">
+      <div class="section-header">
+        <div class="section-num">01</div>
+        <div>
+          <h2>Pendahuluan: Fondasi Kebijakan Pendidikan ABK (10 Menit)</h2>
+          <small style="color:var(--text-muted)">Perjalanan Panjang Menuju Pendidikan yang Memanusiakan[cite: 1]</small>
+        </div>
+      </div>
+      <p>Lahirnya layanan pendidikan dan bimbingan bagi anak berkebutuhan khusus bukanlah sebuah peristiwa kebetulan, melainkan hasil dari dialektika panjang perjuangan kemanusiaan, regulasi pemerintah, dan bukti-bukti riset ilmiah[cite: 1]. Selama berabad-abad, anak-anak dengan kelainan dipandang dari kacamata belas kasihan yang sempit, diasingkan dari pergaulan normal, atau ditempatkan pada institusi tertutup[cite: 1].</p>
+
+      <div class="quote-box">
+        "Lahirnya pendidikan bagi anak berkebutuhan khusus mengalami proses perjalanan yang amat panjang[cite: 1]. Lahirnya pendidikan anak berkebutuhan khusus tentunya berdasarkan landasan dan kebijakan pemerintah[cite: 1]."
+        <span class="citation">— Febriani, Triyono, Handayani, &amp; Hidayat (2024, Bab II, hlm. 11)[cite: 1]</span>
+      </div>
+
+      <p>Untuk memahami mengapa layanan Bimbingan dan Konseling wajib diselenggarakan secara inklusif, pendidik harus memahami dua fondasi awal: landasan pedagogis yang mengarahkan pembentukan karakter manusia seutuhnya, serta landasan empiris yang membuktikan secara ilmiah keunggulan lingkungan belajar terpadu[cite: 1].</p>
+    </article>
+
+    <!-- SESI 2: MATERI INTI (45 MENIT) -->
+    <article class="section-block">
+      <div class="section-header">
+        <div class="section-num">02</div>
+        <div>
+          <h2>Materi Inti: Landasan Pedagogis &amp; Empiris (45 Menit)</h2>
+          <small style="color:var(--text-muted)">Kajian Komprehensif Berdasarkan Buku Ajar Bab II[cite: 1]</small>
+        </div>
+      </div>
+
+      <!-- LANDASAN PEDAGOGIS -->
+      <h3>A. Landasan Pedagogis: Menumbuhkan Potensi &amp; Akhlak Mulia</h3>
+      <p>Secara pedagogis, pendidikan adalah proses pembudayaan dan pemberdayaan peserta didik agar mampu mandiri dan bermoral[cite: 1]. Buku ajar merujuk secara tegas amanat dasar negara dalam sistem pendidikan nasional[cite: 1]:</p>
+
+      <div class="quote-box">
+        "Pasal 3 UU No. 20 tahun 2003 tentang Sisdiknas menyebutkan bahwa 'tujuan pendidikan nasional adalah berkembangnya potensi peserta didik agar menjadi manusia beriman dan bertakwa Tuhan Yang Maha Esa, berakhlak mulia, sehat, berilmu, cakap, kreatif, mandiri dan menjadi warga negara yang demokratis dan bertanggung jawab'[cite: 1]. Secara pedagogis, penyelenggaraan pendidikan bagi anak berkebutuhan khusus pada dasarnya diarahkan agar setiap anak dapat tumbuh dan berkembang secara optimal, mampu menjadi manusia yang bermoral, berbudi luhur dan berakhlak mulia[cite: 1]."
+        <span class="citation">— Halaman 11[cite: 1]</span>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-item accent-navy">
+          <strong>1. Pengembangan Potensi Optimal</strong>
+          Anak berkebutuhan khusus dipandang sebagai subjek didik yang memiliki potensi unik[cite: 1]. Pedagogi tidak berfokus melatih ketunaan fisik semata, melainkan mengaktualisasikan seluruh kecakapan nalar, daya cipta, dan kemandirian perilaku[cite: 1].
+        </div>
+        <div class="feature-item accent-orange">
+          <strong>2. Dimensi Moral &amp; Spiritual</strong>
+          Layanan BK menuntun anak agar memiliki keteguhan batin, keimanan, keluhuran budi pekerti, serta penerimaan ikhlas atas kondisi dirinya sebagai ciptaan Tuhan yang bermartabat[cite: 1].
+        </div>
+        <div class="feature-item accent-brown">
+          <strong>3. Kemandirian Demokratis</strong>
+          Membekali peserta didik agar tidak menjadi beban sosial berkepanjangan, melainkan mampu berpartisipasi aktif, bertanggung jawab, dan bersuara dalam kehidupan bermasyarakat[cite: 1].
+        </div>
+      </div>
+
+      <!-- LANDASAN EMPIRIS -->
+      <h3>B. Landasan Empiris: Bukti Ilmiah Keunggulan Lingkungan Terpadu</h3>
+      <p>Landasan empiris bersumber dari hasil-hasil penyelidikan ilmiah dan observasi lapangan mengenai efektivitas model penempatan anak berkebutuhan khusus[cite: 1]. Terdapat dua temuan penting yang diungkap dalam buku teks[cite: 1]:</p>
+
+      <div class="example-box">
+        <strong>1. Temuan The National Academy of Science (Amerika Serikat):</strong>
+        Hasil telaah empiris membuktikan bahwa pengelompokan, klasifikasi, dan penempatan anak berkelainan secara terpisah di sekolah atau kelas khusus (segregasi) terbukti <em>tidak efektif</em> dan bersifat <em>diskriminatif</em>[cite: 1]. Pemisahan anak dari lingkungan sosial normal justru membatasi stimulasi sosial mereka dan menumbuhkan label negatif[cite: 1].
+      </div>
+
+      <div class="example-box">
+        <strong>2. Temuan Riset Meyer (2001):</strong>
+        Meyer menegaskan bahwa siswa penyandang kecacatan yang cukup berat ditemukan memiliki keberhasilan yang jauh lebih besar manakala mereka memperoleh pendidikan dalam lingkungan yang menerima keberadaan mereka—khususnya dalam hal keterampilan hubungan sosial dan jalinan persahabatan alami dengan masyarakat di sekitarnya[cite: 1].
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-item">
+          <strong>Kegagalan Model Segregasi</strong>
+          Menempatkan anak di lingkungan eksklusif membuat mereka canggung saat berhadapan dengan realitas sosial setelah menyelesaikan pendidikan[cite: 1].
+        </div>
+        <div class="feature-item accent-orange">
+          <strong>Keberhasilan Model Inklusi</strong>
+          Lingkungan sekolah reguler yang ramah menyediakan model perilaku sebaya (*peer model*), mempercepat kematangan bahasa, dan melatih rasa percaya diri anak[cite: 1].
+        </div>
+      </div>
+    </article>
+
+    <!-- SESI 3: GAMES INTERAKTIF (5 MENIT) -->
+    <article class="section-block">
+      <div class="section-header">
+        <div class="section-num">03</div>
+        <div>
+          <h2>Games Interaktif: Audit Kebijakan &amp; Bukti Empiris (5 Menit)</h2>
+          <small style="color:var(--text-muted)">Evaluasi Kritis terhadap Keputusan Penempatan Siswa[cite: 1]</small>
+        </div>
+      </div>
+      <div class="game-card">
+        <h4>⚡ Uji Pemahaman Bukti Empiris</h4>
+        <p style="margin-top:0.4rem">Sebuah dewan sekolah memutuskan untuk memisahkan seluruh siswa dengan hambatan fisik ringan ke dalam ruangan bawah tanah yang terisolasi dari siswa lainnya dengan dalih "agar mereka tidak diejek dan proses belajar anak normal tidak terganggu"[cite: 1]. Mengacu pada hasil telaah The National Academy of Science dan temuan Meyer (2001), evaluasi yang paling tepat atas kebijakan ini adalah[cite: 1]:</p>
+        <div class="quiz-options">
+          <button class="quiz-btn" onclick="checkAnswer(false)">A. Kebijakan tersebut sangat tepat karena melindungi anak dari ejekan teman sebaya.</button>
+          <button class="quiz-btn" onclick="checkAnswer(false)">B. Kebijakan tersebut efektif untuk meningkatkan nilai ujian nasional siswa reguler.</button>
+          <button class="quiz-btn" onclick="checkAnswer(true)">C. Kebijakan tersebut SALAH BESAR, diskriminatif, dan tidak efektif; anak justru lebih berhasil jika belajar di lingkungan yang menerima mereka[cite: 1].</button>
+          <button class="quiz-btn" onclick="checkAnswer(false)">D. Kebijakan tersebut sesuai dengan amanat UU Sisdiknas Pasal 3.</button>
+        </div>
+        <div id="quiz-feedback" class="quiz-feedback"></div>
+      </div>
+    </article>
+
+    <!-- SESI 4: TANYA JAWAB & CLOSING -->
+    <article class="section-block">
+      <div class="section-header">
+        <div class="section-num">04</div>
+        <div>
+          <h2>Tanya Jawab &amp; Closing Statement</h2>
+          <small style="color:var(--text-muted)">Refleksi Integritas Konselor dan Pendidik Khusus[cite: 1]</small>
+        </div>
+      </div>
+      <p><strong>Fokus Diskusi Kelas:</strong></p>
+      <ul class="detailed-list">
+        <li>Bagaimana guru BK dapat menerjemahkan tujuan Pasal 3 UU Sisdiknas dalam memupuk kemandirian anak dengan disabilitas fisik dan sensorik[cite: 1]?</li>
+        <li>Mengapa penerimaan sosial dan persahabatan di sekolah reguler (temuan Meyer, 2001) jauh lebih berdampak pada masa depan ABK dibanding sekadar pencapaian akademis semata[cite: 1]?</li>
+      </ul>
+      <div class="quote-box" style="border-left-color: var(--theme-orange); background-color: var(--theme-orange-light);">
+        "Landasan pedagogis mengingatkan kita tentang tujuan akhir kemuliaan akhlak manusia, sementara bukti empiris membuktikan bahwa memisahkan anak bukanlah jalan keluar[cite: 1]. Konselor sekolah hadir untuk memastikan pintu inklusi terbuka lebar bagi setiap anak tanpa terkecuali[cite: 1]."
+        <span class="citation">— Penutup Perkuliahan Pertemuan ke-4[cite: 1]</span>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- PRESENTATION MODAL (SLIDE DECK) -->
+  <div id="presentationModal" class="modal-overlay">
+    <div class="slide-deck">
+      <div class="slide-deck-header">
+        <div style="font-weight:800; font-size:1.05rem; display:flex; align-items:center; gap:0.5rem;">
+          <span style="background:var(--theme-navy); color:#FFF; border:1.5px solid #000; padding:2px 8px; border-radius:6px;">Slide Deck</span>
+          <span>Pertemuan IV: Landasan Pedagogis &amp; Empiris BK ABK[cite: 1]</span>
+        </div>
+        <button class="btn btn-worksheet" style="padding:0.35rem 0.8rem; font-size:0.8rem;" onclick="closePresentation()">Keluar (Esc)</button>
+      </div>
+
+      <!-- SLIDE 1: SAMPUL -->
+      <div class="slide-deck-content active" id="slide-1">
+        <div class="slide-subtitle">MATA KULIAH: BIMBINGAN KONSELING ABK (2 SKS)</div>
+        <h1 class="slide-title">Landasan Pedagogis &amp; Empiris BK bagi ABK</h1>
+        <div class="slide-visual-grid">
+          <div>
+            <p style="font-size:1.05rem; margin-bottom:1.25rem;">Menelusuri arah pendidikan nasional menurut UU Sisdiknas No. 20/2003 Pasal 3 serta telaah bukti riset The National Academy of Science dan Meyer (2001) mengenai keunggulan lingkungan inklusif[cite: 1].</p>
+            <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+              <span class="tag" style="background:var(--theme-orange-light)">Durasi: 100 Menit</span>
+              <span class="tag" style="background:var(--theme-navy-light)">Rujukan: Bab II Poin A[cite: 1]</span>
+            </div>
+          </div>
+          <div>
+            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80" alt="Slide Sampul" style="width:100%; border:2px solid #000; border-radius:10px; box-shadow:4px 4px 0px var(--theme-navy);">
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2: LANDASAN PEDAGOGIS -->
+      <div class="slide-deck-content" id="slide-2">
+        <div class="slide-subtitle">FILOSOFI PENDIDIKAN NASIONAL</div>
+        <h2 class="slide-title">Landasan Pedagogis: Amanat UU Sisdiknas</h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; margin-top:0.85rem;">
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-orange-dark); display:block; margin-bottom:0.25rem;">Pasal 3 UU No. 20/2003</strong>
+            Pendidikan nasional bertujuan mengembangkan potensi peserta didik menjadi manusia beriman, bertakwa, berakhlak mulia, cakap, kreatif, mandiri, dan bertanggung jawab[cite: 1].
+          </div>
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-navy); display:block; margin-bottom:0.25rem;">Arah Pedagogi ABK</strong>
+            Penyelenggaraan pendidikan diarahkan agar anak berkebutuhan khusus tumbuh optimal menjadi pribadi bermoral dan berbudi luhur[cite: 1].
+          </div>
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-brown); display:block; margin-bottom:0.25rem;">Non-Diskriminasi</strong>
+            Keterbatasan fisik/mental tidak menggugurkan hak anak untuk dididik menjadi manusia seutuhnya[cite: 1].
+          </div>
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-orange-dark); display:block; margin-bottom:0.25rem;">Peran Bimbingan Konseling</strong>
+            Menjembatani nilai moral, pembinaan kepribadian, serta kepercayaan diri anak di lingkungan sekolah[cite: 1].
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3: BUKTI EMPIRIS SEGREGASI -->
+      <div class="slide-deck-content" id="slide-3">
+        <div class="slide-subtitle">TEMUAN RISET INTERNASIONAL</div>
+        <h2 class="slide-title">Kritik Empiris terhadap Segregasi Sekolah</h2>
+        <div class="slide-visual-grid">
+          <div>
+            <ul class="detailed-list" style="font-size:0.98rem; line-height:1.7;">
+              <li><strong>The National Academy of Science (AS):</strong> Mengklasifikasikan dan menempatkan anak di sekolah atau kelas terpisah terbukti <em>tidak efektif</em> dan <em>diskriminatif</em>[cite: 1].</li>
+              <li>Segregasi memicu pengucilan sosial, rasa rendah diri (inferioritas), dan keterasingan dari norma masyarakat[cite: 1].</li>
+              <li>Anak yang terbiasa di lingkungan eksklusif kesulitan beradaptasi saat terjun ke dunia kerja nyata pascasekolah[cite: 1].</li>
+            </ul>
+          </div>
+          <div>
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="Slide Empiris" style="width:100%; border:2px solid #000; border-radius:10px; box-shadow:4px 4px 0px var(--theme-brown);">
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 4: TEMUAN MEYER (2001) -->
+      <div class="slide-deck-content" id="slide-4">
+        <div class="slide-subtitle">KEKUATAN LINGKUNGAN INKLUSIF</div>
+        <h2 class="slide-title">Bukti Riset Meyer (2001): Nilai Persahabatan</h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; margin-top:0.85rem;">
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-navy); display:block; margin-bottom:0.3rem;">Keberhasilan Lebih Besar</strong>
+            Siswa dengan disabilitas yang cukup berat terbukti lebih berhasil jika berada dalam lingkungan belajar yang menerima mereka[cite: 1].
+          </div>
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-orange-dark); display:block; margin-bottom:0.3rem;">Hubungan Sosial Alami</strong>
+            Lingkungan reguler menumbuhkan persahabatan alami antara anak berkebutuhan khusus dengan anak-anak seusianya[cite: 1].
+          </div>
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-brown); display:block; margin-bottom:0.3rem;">Penerimaan Masyarakat</strong>
+            Interaksi sejak dini di sekolah inklusi melatih masyarakat untuk memiliki empati dan meruntuhkan prasangka negatif terhadap disabilitas[cite: 1].
+          </div>
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-navy); display:block; margin-bottom:0.3rem;">Dukungan Teman Sebaya</strong>
+            Teman sebaya bertindak sebagai pembimbing sosial (*peer tutor*) yang efektif bagi tumbuh kembang ABK[cite: 1].
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 5: SIMPULAN -->
+      <div class="slide-deck-content" id="slide-5">
+        <div class="slide-subtitle">SIMPULAN &amp; REFLEKSI KELAS</div>
+        <h2 class="slide-title">Sintesis Pedagogis &amp; Empiris</h2>
+        <div class="quote-box" style="font-size:1.05rem; margin-top:1.25rem;">
+          "Secara pedagogis, ABK berhak atas asuhan moral dan kemandirian budi pekerti[cite: 1]. Secara empiris, hak tersebut paling berhasil diwujudkan di dalam lingkungan yang menerima keberadaan mereka tanpa sekat diskriminasi[cite: 1]."
+        </div>
+        <p style="margin-top:1.5rem; font-size:0.98rem;">
+          <strong>Aktivitas Mandiri:</strong> Silakan buka jendela soal evaluasi untuk menyelesaikan 10 butir soal pemahaman mandiri[cite: 1]. Dosen pengampu dapat membuka lembar kunci melalui verifikasi sandi khusus[cite: 1].
+        </p>
+      </div>
+
+      <!-- FOOTER CONTROLS -->
+      <div class="slide-deck-footer">
+        <div style="font-weight:700;" id="slideIndicator">Slide 1 dari 5</div>
+        <div style="display:flex; gap:0.5rem;">
+          <button class="btn" onclick="prevSlide()">◀ Sebelumnya</button>
+          <button class="btn btn-presentation" onclick="nextSlide()">Berikutnya ▶</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL BACA & CETAK: SOAL EVALUASI 10 PG + KUNCI DOSEN -->
+  <div id="readingModal" class="modal-overlay">
+    <div class="reading-modal-container">
+      <div class="reading-modal-header">
+        <div style="font-weight:800; font-size:1rem; display:flex; align-items:center; gap:0.5rem; color:var(--theme-navy);">
+          <span>📄 Lembar Evaluasi &amp; Kunci Dosen: Landasan Pedagogis &amp; Empiris[cite: 1]</span>
+        </div>
+        <div style="display:flex; gap:0.5rem;">
+          <button class="btn btn-worksheet" style="padding:0.35rem 0.8rem; font-size:0.82rem;" onclick="triggerPrint()">
+            🖨️ Cetak Lembar Soal (PDF)
+          </button>
+          <button class="btn" style="padding:0.35rem 0.8rem; font-size:0.82rem;" onclick="closeReadingModal()">
+            Tutup (Esc)
+          </button>
+        </div>
+      </div>
+      
+      <!-- AREA DOKUMEN EVALUASI -->
+      <div class="reading-modal-body" id="printableArea">
+        <div style="text-align:center; border-bottom:2px solid #000; padding-bottom:10px; margin-bottom:16px;">
+          <h2 style="font-size:14pt; font-weight:800; text-transform:uppercase; margin-bottom:3px;">Evaluasi Perkuliahan: Landasan Pedagogis &amp; Empiris BK ABK</h2>
+          <h3 style="font-size:11pt; font-weight:600; margin-bottom:3px;">Mata Kuliah: Bimbingan dan Konseling ABK • Pertemuan 4</h3>
+          <p style="font-size:9pt; color:#333;">Materi: Bab II Poin A.1 &amp; A.2 (Buku Pendidikan Anak Berkebutuhan Khusus)[cite: 1]</p>
+        </div>
+
+        <table style="width:100%; margin-bottom:12px; font-size:9.5pt; border-collapse:collapse;">
+          <tr>
+            <td style="width:140px; padding:2px 0;"><strong>Nama Mahasiswa</strong></td>
+            <td style="padding:2px 0;">: .................................................................................</td>
+            <td style="width:80px; padding:2px 0;"><strong>NIM</strong></td>
+            <td style="padding:2px 0;">: ......................................</td>
+          </tr>
+          <tr>
+            <td style="padding:2px 0;"><strong>Program Studi</strong></td>
+            <td style="padding:2px 0;">: .................................................................................</td>
+            <td style="padding:2px 0;"><strong>Kelas</strong></td>
+            <td style="padding:2px 0;">: ......................................</td>
+          </tr>
+        </table>
+
+        <div style="margin-bottom:12px; font-size:9pt; background:#FFF7ED; padding:6px 10px; border:1px solid #FED7AA; border-radius:4px;">
+          <strong>Petunjuk Mengerjakan:</strong> Pilihlah satu jawaban yang paling tepat (A, B, C, atau D) dengan memberi tanda silang (X) atau melingkari huruf pilihan Anda[cite: 1]!
+        </div>
+
+        <!-- 10 SOAL PILIHAN GANDA -->
+        <div style="font-size:9pt; line-height:1.5;">
+
+          <!-- SOAL 1 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>1. Tujuan pendidikan nasional menurut Pasal 3 UU No. 20 Tahun 2003 tentang Sisdiknas adalah mengembangkan potensi peserta didik agar menjadi manusia yang...[cite: 1]</strong></p>
+            <div style="padding-left:15px;">
+              A. Mampu bersaing secara individual dan mengabaikan nilai sosial<br>
+              B. Beriman, bertakwa, berakhlak mulia, sehat, berilmu, cakap, kreatif, mandiri, dan demokratis[cite: 1]<br>
+              C. Memiliki keseragaman fisik dan intelektual tanpa perbedaan<br>
+              D. Sepenuhnya bergantung pada bantuan negara dan keluarga
+            </div>
+          </div>
+
+          <!-- SOAL 2 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>2. Secara pedagogis, penyelenggaraan pendidikan bagi anak berkebutuhan khusus pada dasarnya diarahkan agar setiap anak dapat...[cite: 1]</strong></p>
+            <div style="padding-left:15px;">
+              A. Disembuhkan dari segala bentuk ketunaan fisik dan sensorik<br>
+              B. Dipisahkan ke asrama tertutup yang jauh dari masyarakat<br>
+              C. Tumbuh dan berkembang optimal, bermoral, berbudi luhur, dan berakhlak mulia[cite: 1]<br>
+              D. Menguasai seluruh materi kurikulum umum dengan standar nilai yang dipaksakan
+            </div>
+          </div>
+
+          <!-- SOAL 3 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>3. Berdasarkan temuan The National Academy of Science (Amerika Serikat), klasifikasi dan penempatan anak berkelainan di sekolah atau kelas khusus terbukti...[cite: 1]</strong></p>
+            <div style="padding-left:15px;">
+              A. Sangat efektif dan mempercepat prestasi akademik<br>
+              B. Satu-satunya cara terbaik untuk menjaga ketertiban kelas reguler<br>
+              C. Tidak efektif dan bersifat diskriminatif[cite: 1]<br>
+              D. Mendapat persetujuan bulat dari seluruh pakar pendidikan dunia
+            </div>
+          </div>
+
+          <!-- SOAL 4 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>4. Hasil riset yang dikemukakan oleh Meyer (2001) menunjukkan bahwa siswa yang memiliki kecacatan cukup berat akan memiliki keberhasilan lebih besar manakala mereka...[cite: 1]</strong></p>
+            <div style="padding-left:15px;">
+              A. Memperoleh pendidikan dalam lingkungan yang menerima mereka, khususnya dalam hubungan sosial dan persahabatan[cite: 1]<br>
+              B. Ditempatkan di ruang belajar mandiri tanpa berinteraksi dengan siswa lain<br>
+              C. Menghindari segala aktivitas sosial bersama masyarakat luas<br>
+              D. Mengabaikan bimbingan konseling dan hanya belajar keterampilan tangan
+            </div>
+          </div>
+
+          <!-- SOAL 5 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>5. Mengapa penempatan anak berkebutuhan khusus di kelas atau sekolah khusus terpisah (segregasi) dipandang memiliki kelemahan empiris mendasar?[cite: 1]</strong></p>
+            <div style="padding-left:15px;">
+              A. Karena biaya operasional sekolah khusus terlalu murah<br>
+              B. Karena membatasi kesempatan anak menjalin hubungan persahabatan alami dengan masyarakat normal di sekitarnya[cite: 1]<br>
+              C. Karena guru di sekolah khusus tidak memiliki kompetensi mengajar<br>
+              D. Karena kurikulum di sekolah khusus terlalu padat dengan ujian teori
+            </div>
+          </div>
+
+          <!-- SOAL 6 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>6. Penyelenggaraan layanan Bimbingan dan Konseling berlandaskan pedagogis bertujuan untuk...[cite: 1]</strong></p>
+            <div style="padding-left:15px;">
+              A. Memaksa siswa ABK agar memiliki nilai rapor yang sama dengan siswa rata-rata<br>
+              B. Menghukum siswa ABK yang mengalami gangguan emosi dan perilaku di kelas<br>
+              C. Mengembangkan kepribadian paripurna yang serasi, seimbang, dan mandiri sesuai kapasitas anak[cite: 1]<br>
+              D. Menggantikan seluruh tugas tenaga medis dan fisioterapis di rumah sakit
+            </div>
+          </div>
+
+          <!-- SOAL 7 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>7. Istilah "lingkungan yang menerima mereka" dalam riset Meyer (2001) merujuk pada konsep filosofis dari model pendidikan...[cite: 1]</strong></p>
+            <div style="padding-left:15px;">
+              A. Segregatif tertutup<br>
+              B. Pendidikan inklusif / terpadu[cite: 1]<br>
+              C. Pendidikan asrama khusus disabilitas<br>
+              D. Kelas karantina mandiri
+            </div>
+          </div>
+
+          <!-- SOAL 8 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>8. Hubungan sosial dan persahabatan yang terjalin antara ABK dan teman sebayanya di sekolah reguler memberikan dampak empiris berupa...[cite: 1]</strong></p>
+            <div style="padding-left:15px;">
+              A. Munculnya persaingan tidak sehat di antara peserta didik<br>
+              B. Menurunnya motivasi belajar anak-anak normal di kelas<br>
+              C. Tumbuhnya penerimaan sosial alami dan kesiapan mental ABK menghadapi masyarakat luas[cite: 1]<br>
+              D. Terhentinya seluruh proses pembelajaran kurikulum formal
+            </div>
+          </div>
+
+          <!-- SOAL 9 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>9. Hubungan yang tepat antara Landasan Pedagogis dan Landasan Empiris dalam pendidikan ABK adalah...[cite: 1]</strong></p>
+            <div style="padding-left:15px;">
+              A. Landasan empiris membantah seluruh cita-cita moral dari landasan pedagogis<br>
+              B. Landasan pedagogis menetapkan arah kemuliaan manusia, sedangkan landasan empiris membuktikan bahwa lingkungan inklusi adalah sarana paling efektif untuk mencapainya[cite: 1]<br>
+              C. Kedua landasan tersebut saling bertentangan dan tidak dapat diselaraskan di sekolah<br>
+              D. Landasan pedagogis hanya berlaku di SLB, sedangkan landasan empiris hanya di sekolah reguler
+            </div>
+          </div>
+
+          <!-- SOAL 10 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>10. Berdasarkan uraian Bab II buku ajar, kelahiran pendidikan anak berkebutuhan khusus berakar pada...[cite: 1]</strong></p>
+            <div style="padding-left:15px;">
+              A. Proses perjalanan sejarah yang amat panjang serta didasarkan atas landasan dan kebijakan pemerintah[cite: 1]<br>
+              B. Keputusan spontan tanpa pertimbangan regulasi dan kajian ilmiah<br>
+              C. Desakan komersial dari industri produsen alat bantu dengar<br>
+              D. Keinginan sepihak untuk membatasi interaksi penyandang disabilitas
+            </div>
+          </div>
+
+        </div>
+
+        <!-- VERIFIKASI DOSEN KHUSUS UNTUK MEMBUKA KUNCI -->
+        <div class="lecturer-auth-box">
+          <div style="font-weight:700; color:var(--theme-navy); margin-bottom:0.35rem;">
+            🔒 Kunci Jawaban Resmi (Akses Khusus Dosen Pengampu)
+          </div>
+          <p style="font-size:8.5pt; margin-bottom:0.5rem; color:var(--text-muted);">
+            Masukkan kode verifikasi dosen untuk membuka kunci jawaban dan pembahasan Bab II Poin A.1 &amp; A.2:
+          </p>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+            <input type="password" id="lecturerPass" placeholder="Masukkan Sandi Dosen..." style="padding:0.35rem 0.75rem; border:1.5px solid var(--border-dark); border-radius:4px; font-size:8.5pt;">
+            <button class="btn btn-presentation" style="padding:0.35rem 0.85rem; font-size:8pt;" onclick="unlockAnswerKey()">Verifikasi Sandi</button>
+          </div>
+          
+          <div id="keyContent" class="answer-key-content">
+            <h4 style="color:var(--theme-brown-dark); margin-bottom:0.4rem; font-size:10pt;">Kunci Jawaban 10 Soal Evaluasi (Bab II Poin A.1 &amp; A.2):[cite: 1]</h4>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap:0.35rem; font-size:8.5pt; font-weight:700;">
+              <div>1. B (Pasal 3 Sisdiknas)[cite: 1]</div>
+              <div>2. C (Tumbuh Optimal &amp; Berbudi)[cite: 1]</div>
+              <div>3. C (Tidak Efektif &amp; Diskriminatif)[cite: 1]</div>
+              <div>4. A (Riset Meyer 2001)[cite: 1]</div>
+              <div>5. B (Hambatan Relasi Sosial)[cite: 1]</div>
+              <div>6. C (Totalitas Kepribadian)[cite: 1]</div>
+              <div>7. B (Pendidikan Inklusif)[cite: 1]</div>
+              <div>8. C (Penerimaan Sosial Alami)[cite: 1]</div>
+              <div>9. B (Sinergi Moral &amp; Riset)[cite: 1]</div>
+              <div>10. A (Proses Panjang &amp; Regulasi)[cite: 1]</div>
+            </div>
+            <div style="margin-top:0.6rem; font-size:8pt; color:#78350F; font-style:italic;">
+              *Catatan Dosen: Kunci telah diverifikasi sesuai Buku Pendidikan Anak Berkebutuhan Khusus Bab II Halaman 11–12[cite: 1].
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:20px; display:flex; justify-content:space-between; font-size:9pt;">
+          <div>
+            <strong>Tanda Tangan Mahasiswa:</strong><br><br><br>
+            (.......................................................)
+          </div>
+          <div style="text-align:center;">
+            <strong>Verifikasi Nilai Dosen Pengampu:</strong><br><br><br>
+            (.......................................................)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT CONTROLLER -->
+  <script>
+    /* SLIDE PRESENTATION LOGIC */
+    let currentSlide = 1;
+    const totalSlides = 5;
+
+    function openPresentation() {
+      document.getElementById('presentationModal').classList.add('active');
+      showSlide(currentSlide);
+    }
+
+    function closePresentation() {
+      document.getElementById('presentationModal').classList.remove('active');
+    }
+
+    function showSlide(index) {
+      for (let i = 1; i <= totalSlides; i++) {
+        const slide = document.getElementById('slide-' + i);
+        if (slide) slide.classList.remove('active');
+      }
+      const activeSlide = document.getElementById('slide-' + index);
+      if (activeSlide) activeSlide.classList.add('active');
+      document.getElementById('slideIndicator').innerText = `Slide ${index} dari ${totalSlides}`;
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        showSlide(currentSlide);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        showSlide(currentSlide);
+      }
+    }
+
+    /* READING & PRINT MODAL LOGIC */
+    function openReadingModal() {
+      document.getElementById('readingModal').classList.add('active');
+    }
+
+    function closeReadingModal() {
+      document.getElementById('readingModal').classList.remove('active');
+    }
+
+    function triggerPrint() {
+      window.print();
+    }
+
+    // Keyboard navigation (Esc & Arrows)
+    document.addEventListener('keydown', function(e) {
+      const presModal = document.getElementById('presentationModal');
+      const readModal = document.getElementById('readingModal');
+
+      if (presModal.classList.contains('active')) {
+        if (e.key === 'ArrowRight' || e.key === 'Space') {
+          nextSlide();
+        } else if (e.key === 'ArrowLeft') {
+          prevSlide();
+        } else if (e.key === 'Escape') {
+          closePresentation();
+        }
+      } else if (readModal.classList.contains('active')) {
+        if (e.key === 'Escape') {
+          closeReadingModal();
+        }
+      }
+    });
+
+    /* QUIZ PEMBUKA LOGIC */
+    function checkAnswer(isCorrect) {
+      const feedback = document.getElementById('quiz-feedback');
+      feedback.style.display = 'block';
+      if (isCorrect) {
+        feedback.style.backgroundColor = '#FFEDD5';
+        feedback.style.borderColor = '#EA580C';
+        feedback.style.color = '#7C2D12';
+        feedback.innerText = '✅ TEPAT SEKALI! Mengacu pada Halaman 11-12, The National Academy of Science menyatakan pemisahan kelas khusus terbukti diskriminatif dan tidak efektif, sementara Meyer (2001) membuktikan keberhasilan anak berada di lingkungan inklusi yang menerima mereka[cite: 1].';
+      } else {
+        feedback.style.backgroundColor = '#FEE2E2';
+        feedback.style.borderColor = '#DC2626';
+        feedback.style.color = '#991B1B';
+        feedback.innerText = '❌ KURANG TEPAT. Ingat kembali bukti empiris Bab II Halaman 11-12: Menempatkan anak secara terpisah (segregasi) justru dinilai tidak efektif dan diskriminatif[cite: 1].';
+      }
+    }
+
+    /* VERIFIKASI KUNCI JAWABAN DOSEN */
+    function unlockAnswerKey() {
+      const pass = document.getElementById('lecturerPass').value;
+      const keyBox = document.getElementById('keyContent');
+      // Password khusus dosen Pertemuan 4: DOSENBK4
+      if (pass === 'DOSENBK4' || pass === 'dosenbk4') {
+        keyBox.style.display = 'block';
+        alert('Kunci jawaban Bab II (Landasan Pedagogis & Empiris) berhasil dibuka.');
+      } else {
+        alert('Sandi salah. Akses kunci jawaban hanya diperuntukkan bagi dosen pengampu.');
+      }
+    }
+  </script>
+</body>
+</html>
