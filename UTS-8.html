@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UTS: Observasi Lapangan & Perancangan Layanan BK ABK</title>
+  
+  <!-- Font Google: Plus Jakarta Sans & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      /* Palet Warna Lebih Soft / Muda & Segar */
+      --soft-blue: #60A5FA;
+      --soft-blue-light: #EFF6FF;
+      --soft-blue-dark: #2563EB;
+
+      --soft-peach: #FB923C;
+      --soft-peach-light: #FFF7ED;
+      --soft-peach-dark: #EA580C;
+
+      --soft-coral: #F87171;
+      --soft-coral-light: #FEF2F2;
+
+      --soft-mint: #34D399;
+      --soft-mint-light: #ECFDF5;
+
+      --soft-amber: #FBBF24;
+      --soft-amber-light: #FEFCE8;
+
+      --bg-canvas: #FAF9F6; /* Warm subtle cream */
+      --card-bg: #FFFFFF;
+      --text-dark: #1E293B;
+      --text-muted: #64748B;
+      --border-soft: #E2E8F0;
+      
+      --shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.04);
+      --shadow-card: 0 12px 28px -6px rgba(96, 165, 250, 0.12), 0 8px 12px -4px rgba(15, 23, 42, 0.04);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-xl: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-canvas);
+      color: var(--text-dark);
+      line-height: 1.68;
+      font-size: 0.96rem;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--text-dark);
+    }
+
+    /* TOP NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-soft);
+      padding: 0.85rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+
+    .nav-brand-icon {
+      background: linear-gradient(135deg, var(--soft-blue), #3B82F6);
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(96, 165, 250, 0.35);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.25rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      font-family: inherit;
+    }
+
+    .btn-print {
+      background: linear-gradient(135deg, var(--soft-blue), #2563EB);
+      color: white;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-print:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+    }
+
+    /* CONTAINER UTAMA */
+    .container {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 5rem;
+    }
+
+    /* HERO BANNER (SOFT GRADIENT) */
+    .hero-book {
+      background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
+      color: white;
+      border-radius: var(--radius-xl);
+      padding: 2.75rem 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-book::after {
+      content: '';
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(96, 165, 250, 0.22) 0%, transparent 70%);
+      top: -40px;
+      right: -40px;
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-badge {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #F1F5F9;
+    }
+
+    .hero-book h1 {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 0.7rem;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+
+    .hero-book p {
+      color: #CBD5E1;
+      font-size: 0.96rem;
+      line-height: 1.65;
+    }
+
+    .illustration-wrapper {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    /* TIMELINE ALOKASI WAKTU UTS */
+    .timeline-wrapper {
+      background: white;
+      border: 1px solid var(--border-soft);
+      border-radius: 18px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .timeline-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.85rem;
+    }
+
+    .slot-box {
+      background: #F8FAFC;
+      border-radius: 14px;
+      padding: 1rem;
+      border-left: 5px solid var(--soft-blue);
+    }
+
+    .slot-box.peach { border-left-color: var(--soft-peach); background: var(--soft-peach-light); }
+    .slot-box.mint { border-left-color: var(--soft-mint); background: var(--soft-mint-light); }
+    .slot-box.amber { border-left-color: var(--soft-amber); background: var(--soft-amber-light); }
+
+    .slot-time {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .slot-heading {
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-top: 0.2rem;
+    }
+
+    /* SECTION CARD & ACCORDION */
+    .content-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      padding: 2rem 2.25rem;
+      margin-bottom: 1.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border-soft);
+      padding-bottom: 0.85rem;
+    }
+
+    .section-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: var(--soft-blue-light);
+      color: var(--soft-blue-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .content-card h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .quote-note {
+      background-color: var(--soft-blue-light);
+      border-left: 4px solid var(--soft-blue);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 1.25rem 0;
+      font-size: 0.94rem;
+      color: #1E3A8A;
+    }
+
+    /* GRID STRUKTUR MAKALAH */
+    .structure-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.1rem;
+      margin-top: 1rem;
+    }
+
+    .structure-item {
+      border: 1px solid var(--border-soft);
+      border-radius: 12px;
+      padding: 1.25rem;
+      background: #FFFFFF;
+      transition: transform 0.15s ease;
+    }
+
+    .structure-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .structure-item.accent-blue {
+      border-top: 4px solid var(--soft-blue);
+    }
+
+    .structure-item.accent-peach {
+      border-top: 4px solid var(--soft-peach);
+    }
+
+    .structure-item.accent-mint {
+      border-top: 4px solid var(--soft-mint);
+    }
+
+    .structure-item strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--text-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .rubrik-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.92rem;
+    }
+
+    .rubrik-table th {
+      background: var(--soft-blue-light);
+      color: var(--soft-blue-dark);
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border-soft);
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .rubrik-table td {
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border-soft);
+      color: #334155;
+    }
+
+    .rubrik-table tr:nth-child(even) {
+      background: #F8FAFC;
+    }
+
+    /* CETAK / PRINT STYLESHEET */
+    @media print {
+      .navbar, .btn-print, .no-print {
+        display: none !important;
+      }
+      body {
+        background: #FFFFFF !important;
+        font-size: 10pt;
+      }
+      .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      .hero-book {
+        background: #F1F5F9 !important;
+        color: #000 !important;
+        border: 1px solid #CBD5E1 !important;
+        box-shadow: none !important;
+        grid-template-columns: 1fr !important;
+        padding: 1.5rem !important;
+      }
+      .hero-book h1, .hero-book p {
+        color: #000 !important;
+      }
+      .illustration-wrapper {
+        display: none !important;
+      }
+      .content-card {
+        border: 1px solid #000 !important;
+        box-shadow: none !important;
+        margin-bottom: 1rem !important;
+        padding: 1.25rem !important;
+        page-break-inside: avoid;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-book { grid-template-columns: 1fr; padding: 1.5rem; }
+      .hero-book h1 { font-size: 1.6rem; }
+      .navbar { padding: 0.75rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAVBAR -->
+  <header class="navbar no-print">
+    <a href="#" class="nav-brand">
+      <div class="nav-brand-icon">
+        <i class="fa-solid fa-clipboard-check"></i>
+      </div>
+      <span>Ujian Tengah Semester (UTS) • BK ABK</span>
+    </a>
+    <div class="nav-actions">
+      <button class="btn btn-print" onclick="window.print()">
+        <i class="fa-solid fa-print"></i>
+        <span>Cetak Panduan Tugas (PDF)</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="container">
+
+    <!-- HERO BANNER -->
+    <section class="hero-book">
+      <div class="hero-content">
+        <div class="hero-meta">
+          <span class="hero-badge">Bobot Nilai: 30%</span>
+          <span class="hero-badge">Bentuk: Makalah Observasi Lapangan</span>
+          <span class="hero-badge">Sifat: Tugas Individual Mandiri</span>
+        </div>
+        <h1>Tugas Proyek UTS: Observasi Kondisi Peserta Didik &amp; Rancangan Layanan BK ABK</h1>
+        <p>
+          Mahasiswa ditugaskan melakukan studi observasi lapangan langsung ke sekolah (Sekolah Luar Biasa atau Sekolah Penyelenggara Pendidikan Inklusif) untuk mengidentifikasi kebutuhan subjek peserta didik, menganalisis karakteristik hambatan perkembangannya, serta merumuskan usulan rancangan layanan Bimbingan dan Konseling yang adaptif dan solutif.
+        </p>
+      </div>
+      <div class="illustration-wrapper">
+        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=700&q=80" alt="Observasi Pendidikan Inklusif" class="hero-img">
+      </div>
+    </section>
+
+    <!-- TIMELINE TAHAPAN PROYEK UTS -->
+    <div class="timeline-wrapper no-print">
+      <div class="timeline-title">
+        <i class="fa-regular fa-clock" style="color: var(--soft-blue-dark);"></i>
+        <span>Jadwal Alur Kerja &amp; Batas Waktu Pelaksanaan UTS</span>
+      </div>
+      <div class="timeline-grid">
+        <div class="slot-box">
+          <div class="slot-time">Minggu Ke-8 (Tahap 1)</div>
+          <div class="slot-heading">Perizinan &amp; Penentuan Subjek</div>
+          <small style="color: var(--text-muted)">Menentukan sekolah mitra (SLB/Inklusi) dan memilih 1 subjek anak secara bebas.</small>
+        </div>
+        <div class="slot-box peach">
+          <div class="slot-time">Minggu Ke-8 s.d. 9 (Tahap 2)</div>
+          <div class="slot-heading">Observasi &amp; Wawancara</div>
+          <small style="color: var(--text-muted)">Menggali data perilaku harian, hambatan belajar, sosial, dan wawancara guru/orang tua.</small>
+        </div>
+        <div class="slot-box mint">
+          <div class="slot-time">Minggu Ke-9 (Tahap 3)</div>
+          <div class="slot-heading">Penyusunan Makalah Ilmiah</div>
+          <small style="color: var(--text-muted)">Menuliskan laporan hasil studi berdasar kajian teoretis rujukan buku ajar.</small>
+        </div>
+        <div class="slot-box amber">
+          <div class="slot-time">Batas Pengumpulan</div>
+          <div class="slot-heading">Submit Dokumen PDF</div>
+          <small style="color: var(--text-muted)">Pengunggahan laporan akhir lengkap dengan lampiran instrumen &amp; dokumentasi.</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- PETUNJUK UMUM & KETENTUAN SUBJEK -->
+    <article class="content-card">
+      <div class="section-header">
+        <div class="section-icon">
+          <i class="fa-solid fa-bullseye"></i>
+        </div>
+        <div>
+          <h2>Ketentuan Umum &amp; Kebebasan Penentuan Subjek</h2>
+        </div>
+      </div>
+      <p>
+        Setiap mahasiswa diberi kebebasan penuh dalam menentukan kategori kekhususan siswa yang diobservasi sesuai aksesibilitas dan minat kajian masing-masing:
+      </p>
+      
+      <div class="quote-note">
+        <strong>Ketentuan Pemilihan Subjek:</strong><br>
+        1. <strong>Lokasi Observasi:</strong> Sekolah Luar Biasa (SLB), Sekolah Dasar/Menengah Penyelenggara Pendidikan Inklusif (SPPI), atau pusat layanan terapi tumbuh kembang anak.<br>
+        2. <strong>Kategori Kekhususan (Bebas Memilih Salah Satu):</strong> Tunanetra, Tunarungu, Tunadaksa, Tunagrahita, Tunalaras, Spektrum Autisme (ASD), ADHD/Hiperaktif, Lamban Belajar (<em>Slow Learner</em>), Anak Berkesulitan Belajar Spesifik (Disleksia/Disgrafia/Diskalkulia), atau Cerdas Istimewa/Berbakat (<em>Gifted</em>).<br>
+        3. <strong>Kode Etik Kerahasiaan:</strong> Demi perlindungan hak privasi anak, identitas subjek wajib disamarkan menggunakan inisial nama (misal: "Ananda R, 9 tahun").
+      </div>
+    </article>
+
+    <!-- SISTEMATIKA & STRUKTUR PENULISAN MAKALAH ILMIAH -->
+    <article class="content-card">
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--soft-peach-light); color: var(--soft-peach-dark);">
+          <i class="fa-solid fa-file-lines"></i>
+        </div>
+        <div>
+          <h2>Sistematika Struktur Penulisan Makalah Ilmiah</h2>
+        </div>
+      </div>
+      <p>
+        Laporan hasil observasi disusun dalam format naskah karya tulis ilmiah baku dengan sistematika bab sebagai berikut:
+      </p>
+
+      <div class="structure-grid">
+        <div class="structure-item accent-blue">
+          <strong>BAB I: PENDAHULUAN</strong>
+          <ul style="padding-left: 1.2rem; color: #475569; font-size: 0.9rem;">
+            <li>Latar belakang urgensi layanan BK bagi subjek ABK terpilih.</li>
+            <li>Identifikasi fokus permasalahan perkembangan yang dialami anak.</li>
+            <li>Tujuan dan manfaat praktis studi observasi lapangan.</li>
+          </ul>
+        </div>
+
+        <div class="structure-item accent-peach">
+          <strong>BAB II: KAJIAN TEORI</strong>
+          <ul style="padding-left: 1.2rem; color: #475569; font-size: 0.9rem;">
+            <li>Hakikat konseptual kekhususan subjek (definisi &amp; penyebab).</li>
+            <li>Karakteristik fisik, emosional, kognitif, dan adaptasi sosial anak.</li>
+            <li>Bentuk-bentuk layanan bimbingan konseling yang relevan (rujukan buku ajar).</li>
+          </ul>
+        </div>
+
+        <div class="structure-item accent-mint">
+          <strong>BAB III: METODOLOGI OBSERVASI</strong>
+          <ul style="padding-left: 1.2rem; color: #475569; font-size: 0.9rem;">
+            <li>Profil singkat satuan pendidikan tempat observasi.</li>
+            <li>Teknik pengumpulan data (observasi partisipatif, wawancara guru/ortu).</li>
+            <li>Profil subjek kasus (inisial, usia, kelas, riwayat perkembangan).</li>
+          </ul>
+        </div>
+
+        <div class="structure-item accent-blue">
+          <strong>BAB IV: HASIL &amp; RANCANGAN LAYANAN</strong>
+          <ul style="padding-left: 1.2rem; color: #475569; font-size: 0.9rem;">
+            <li>Deskripsi temuan riil kondisi siswa di kelas &amp; lingkungan sosial.</li>
+            <li>Analisis kesenjangan tugas perkembangan (*developmental tasks*).</li>
+            <li><strong>Rancangan Program Layanan BK:</strong> Formulasi tujuan, jenis layanan (orientasi, informasi, konseling perorangan), metode, dan media adaptif.</li>
+          </ul>
+        </div>
+
+        <div class="structure-item accent-peach">
+          <strong>BAB V: PENUTUP</strong>
+          <ul style="padding-left: 1.2rem; color: #475569; font-size: 0.9rem;">
+            <li>Kesimpulan komprehensif mengenai hasil asesmen kebutuhan anak.</li>
+            <li>Rekomendasi kolaboratif bagi pihak guru kelas dan orang tua.</li>
+          </ul>
+        </div>
+
+        <div class="structure-item accent-mint">
+          <strong>BAGIAN LAMPIRAN</strong>
+          <ul style="padding-left: 1.2rem; color: #475569; font-size: 0.9rem;">
+            <li>Pedoman instrumen observasi &amp; daftar pertanyaan wawancara.</li>
+            <li>Foto dokumentasi kegiatan di sekolah (wajah anak disamarkan).</li>
+            <li>Surat keterangan bukti pelaksanaan observasi dari pihak sekolah.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- FORMAT TEKNIS & TATA TULIS ILMIAH -->
+    <article class="content-card">
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--soft-mint-light); color: var(--soft-mint);">
+          <i class="fa-solid fa-pen-ruler"></i>
+        </div>
+        <div>
+          <h2>Ketentuan Format Teknis &amp; Tata Tulis</h2>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 0.5rem;">
+        <div style="background: #F8FAFC; padding: 1rem; border-radius: 10px; border: 1px solid var(--border-soft);">
+          <strong style="color: var(--soft-blue-dark);"><i class="fa-regular fa-file"></i> Ukuran Kertas:</strong>
+          <p style="margin: 0; font-size: 0.9rem;">A4 (Margin: Kiri 4 cm, Atas 3 cm, Kanan 3 cm, Bawah 3 cm).</p>
+        </div>
+        <div style="background: #F8FAFC; padding: 1rem; border-radius: 10px; border: 1px solid var(--border-soft);">
+          <strong style="color: var(--soft-peach-dark);"><i class="fa-solid fa-font"></i> Tipografi:</strong>
+          <p style="margin: 0; font-size: 0.9rem;">Times New Roman / Calibri / Arial ukuran 12 pt, Spasi 1.5.</p>
+        </div>
+        <div style="background: #F8FAFC; padding: 1rem; border-radius: 10px; border: 1px solid var(--border-soft);">
+          <strong style="color: #059669;"><i class="fa-solid fa-book-bookmark"></i> Daftar Pustaka:</strong>
+          <p style="margin: 0; font-size: 0.9rem;">Format APA Style (Edisi ke-7) dengan minimal 5 rujukan buku teks/jurnal.</p>
+        </div>
+        <div style="background: #F8FAFC; padding: 1rem; border-radius: 10px; border: 1px solid var(--border-soft);">
+          <strong style="color: #D97706;"><i class="fa-solid fa-cloud-arrow-up"></i> Format Berkas:</strong>
+          <p style="margin: 0; font-size: 0.9rem;">PDF dengan format nama: <code>UTS_BK-ABK_NIM_NamaLengkap.pdf</code>.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- RUBRIK PENILAIAN UTS -->
+    <article class="content-card">
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--soft-amber-light); color: #B45309;">
+          <i class="fa-solid fa-list-check"></i>
+        </div>
+        <div>
+          <h2>Kriteria &amp; Rubrik Penilaian Proyek UTS</h2>
+        </div>
+      </div>
+
+      <table class="rubrik-table">
+        <thead>
+          <tr>
+            <th style="width: 15%;">Komponen</th>
+            <th style="width: 20%;">Indikator Keberhasilan</th>
+            <th style="width: 50%;">Deskripsi Capaian</th>
+            <th style="width: 15%; text-align: center;">Bobot</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Kedalaman Asesmen</strong></td>
+            <td>Keotentikan data lapangan</td>
+            <td>Data observasi dan wawancara diuraikan secara faktual, mendalam, dan menggambarkan profil kesulitan anak secara objektif.</td>
+            <td style="text-align: center; font-weight: 700;">30%</td>
+          </tr>
+          <tr>
+            <td><strong>Ketajaman Analisis</strong></td>
+            <td>Relevansi rujukan teoretis</td>
+            <td>Mampu mengaitkan temuan lapangan dengan teori penyebab, karakteristik, dan tugas perkembangan dari buku teks rujukan.</td>
+            <td style="text-align: center; font-weight: 700;">25%</td>
+          </tr>
+          <tr>
+            <td><strong>Rancangan Layanan BK</strong></td>
+            <td>Aplikabilitas &amp; Solusi BK</td>
+            <td>Formulasi usulan layanan BK (pribadi, sosial, belajar, karier) terukur, adaptif terhadap kondisi anak, serta realistis diterapkan.</td>
+            <td style="text-align: center; font-weight: 700;">30%</td>
+          </tr>
+          <tr>
+            <td><strong>Tata Tulis &amp; Etika</strong></td>
+            <td>Sistematika karya ilmiah</td>
+            <td>Kerapian struktur laporan, penggunaan bahasa ilmiah, ketepatan sitasi APA, serta kerahasiaan identitas subjek.</td>
+            <td style="text-align: center; font-weight: 700;">15%</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+  </main>
+
+</body>
+</html>
