@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pertemuan 7: Peran dan Bentuk Layanan BK bagi ABK</title>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-canvas: #FFFBF5;
+      --card-bg: #FFFFFF;
+      --text-main: #0B192C;
+      --text-muted: #534538;
+      
+      /* Palet Warna Tema: Dark Blue, Oranye, & Cokelat */
+      --theme-navy: #0B192C;
+      --theme-navy-light: #EBF1F8;
+      --theme-navy-dark: #050E1A;
+      
+      --theme-orange: #EA580C;
+      --theme-orange-light: #FFEDD5;
+      --theme-orange-dark: #C2410C;
+      
+      --theme-brown: #78350F;
+      --theme-brown-light: #F7EFE9;
+      --theme-brown-dark: #451A03;
+      
+      --border-dark: #0B192C;
+      --shadow-solid: 4px 4px 0px #0B192C;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      line-height: 1.65;
+      font-size: 0.98rem;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TOP BAR / NAVIGATION */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(255, 251, 245, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 2px solid var(--border-dark);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .badge-course {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--theme-orange-light);
+      border: 2px solid var(--border-dark);
+      box-shadow: 2px 2px 0 var(--border-dark);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--theme-orange-dark);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.05rem;
+      font-weight: 700;
+      font-size: 0.88rem;
+      border-radius: var(--radius-sm);
+      border: 2px solid var(--border-dark);
+      box-shadow: var(--shadow-solid);
+      transition: all 0.15s ease-in-out;
+      text-decoration: none;
+      color: var(--text-main);
+      background-color: #FFFFFF;
+    }
+
+    .btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px var(--border-dark);
+    }
+
+    .btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--border-dark);
+    }
+
+    .btn-presentation {
+      background-color: var(--theme-navy);
+      color: #FFFFFF;
+    }
+
+    .btn-worksheet {
+      background-color: var(--theme-orange);
+      color: #FFFFFF;
+    }
+
+    /* CONTAINER & HERO */
+    .container {
+      max-width: 1040px;
+      margin: 1.5rem auto;
+      padding: 0 1.5rem 3.5rem 1.5rem;
+    }
+
+    .hero {
+      background: #FFFFFF;
+      border: 2px solid var(--border-dark);
+      box-shadow: var(--shadow-solid);
+      border-radius: var(--radius-md);
+      padding: 2.25rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.85rem;
+    }
+
+    .tag {
+      background: var(--bg-canvas);
+      border: 1.5px solid var(--border-dark);
+      border-radius: 999px;
+      padding: 0.2rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 1fr;
+      gap: 1.75rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.5px;
+      color: var(--theme-navy);
+    }
+
+    .hero p {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .hero-illustration {
+      width: 100%;
+      height: 220px;
+      border-radius: var(--radius-sm);
+      border: 2px solid var(--border-dark);
+      box-shadow: 4px 4px 0px var(--theme-orange);
+      object-fit: cover;
+    }
+
+    /* TIMELINE SECTION */
+    .timeline-card {
+      background: #FFFFFF;
+      border: 2px solid var(--border-dark);
+      box-shadow: var(--shadow-solid);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.75rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.85rem;
+    }
+
+    .time-slot {
+      padding: 0.85rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px dashed var(--border-dark);
+    }
+
+    .time-slot.t1 { background: var(--theme-navy-light); }
+    .time-slot.t2 { background: #FFFFFF; }
+    .time-slot.t3 { background: var(--theme-orange-light); }
+    .time-slot.t4 { background: var(--theme-brown-light); }
+
+    .time-slot .time {
+      font-weight: 800;
+      font-size: 0.85rem;
+      display: inline-block;
+      margin-bottom: 0.2rem;
+      color: var(--theme-navy);
+    }
+
+    .time-slot .title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--theme-brown-dark);
+    }
+
+    /* SECTION CARD */
+    .section-block {
+      background: var(--card-bg);
+      border: 2px solid var(--border-dark);
+      box-shadow: var(--shadow-solid);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 2px solid var(--bg-canvas);
+      padding-bottom: 0.85rem;
+    }
+
+    .section-num {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--theme-navy);
+      color: #FFFFFF;
+      border: 2px solid var(--border-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    h2 { font-size: 1.45rem; font-weight: 800; color: var(--theme-navy); }
+    h3 { font-size: 1.15rem; font-weight: 700; margin: 1.25rem 0 0.5rem 0; color: var(--theme-orange-dark); }
+    p { margin-bottom: 0.85rem; color: #2D241E; }
+
+    /* QUOTE BOX */
+    .quote-box {
+      background-color: var(--theme-orange-light);
+      border-left: 5px solid var(--theme-orange);
+      padding: 1.1rem 1.35rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 1.25rem 0;
+      font-style: italic;
+      color: #431407;
+      border-top: 1px solid #FED7AA;
+      border-right: 1px solid #FED7AA;
+      border-bottom: 1px solid #FED7AA;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .quote-box .citation {
+      display: block;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 0.82rem;
+      margin-top: 0.4rem;
+      color: var(--theme-brown);
+    }
+
+    /* EXAMPLE BOX */
+    .example-box {
+      background-color: #FFFFFF;
+      border: 1.5px solid var(--theme-brown);
+      border-left: 5px solid var(--theme-brown);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.25rem;
+      margin: 1.1rem 0;
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+
+    .example-box strong {
+      color: var(--theme-brown-dark);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    /* GRID LISTS */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.1rem;
+      margin: 1.1rem 0;
+    }
+
+    .feature-item {
+      border: 2px solid var(--border-dark);
+      border-radius: var(--radius-sm);
+      padding: 1.15rem;
+      background: #FFFFFF;
+      box-shadow: 3px 3px 0 var(--border-dark);
+    }
+
+    .feature-item.accent-orange { background: var(--theme-orange-light); }
+    .feature-item.accent-brown { background: var(--theme-brown-light); }
+    .feature-item.accent-navy { background: var(--theme-navy-light); }
+
+    .feature-item strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-size: 1rem;
+      color: var(--theme-navy);
+    }
+
+    ol.detailed-list, ul.detailed-list {
+      padding-left: 1.35rem;
+      margin-bottom: 1rem;
+    }
+
+    ol.detailed-list li, ul.detailed-list li {
+      margin-bottom: 0.5rem;
+      padding-left: 0.25rem;
+    }
+
+    /* GAMES CARD */
+    .game-card {
+      background: #FFFFFF;
+      border: 2px solid var(--border-dark);
+      box-shadow: var(--shadow-solid);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-top: 0.85rem;
+    }
+
+    .quiz-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .quiz-btn {
+      text-align: left;
+      background: #FFFFFF;
+      border: 2px solid var(--border-dark);
+      padding: 0.85rem 1rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 2px 2px 0 var(--border-dark);
+      transition: all 0.1s ease;
+      color: var(--theme-navy);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .quiz-btn:hover {
+      background: var(--theme-orange-light);
+      transform: translate(-1px, -1px);
+    }
+
+    .quiz-feedback {
+      margin-top: 1rem;
+      font-weight: 700;
+      display: none;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      border: 2px solid var(--border-dark);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    /* MODAL OVERLAY */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(11, 25, 44, 0.88);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    .modal-overlay.active { display: flex; }
+
+    /* SLIDE PRESENTATION DECK */
+    .slide-deck {
+      width: 100%;
+      max-width: 1080px;
+      height: 90vh;
+      background-color: #FFFCF7;
+      border: 3px solid #0B192C;
+      border-radius: 18px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 10px 10px 0px var(--theme-orange);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slide-deck-header {
+      background: #FFFFFF;
+      border-bottom: 2px solid var(--border-dark);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .slide-deck-content {
+      flex: 1;
+      padding: 2rem 2.75rem;
+      overflow-y: auto;
+      display: none;
+    }
+
+    .slide-deck-content.active {
+      display: block;
+      animation: fadeIn 0.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .slide-deck-footer {
+      background: #FFFFFF;
+      border-top: 2px solid var(--border-dark);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .slide-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      color: var(--theme-navy);
+    }
+
+    .slide-subtitle {
+      font-size: 1.05rem;
+      color: var(--theme-orange);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .slide-visual-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+
+    .slide-card-box {
+      background: #FFFFFF;
+      border: 2px solid var(--border-dark);
+      border-radius: var(--radius-sm);
+      padding: 1.1rem;
+      box-shadow: 3px 3px 0px var(--theme-navy);
+      margin-bottom: 0.75rem;
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+
+    /* MODAL TAMPILAN EVALUASI & KUNCI */
+    .reading-modal-container {
+      width: 100%;
+      max-width: 920px;
+      height: 90vh;
+      background-color: #FFFFFF;
+      border: 3px solid #000;
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 8px 8px 0px var(--theme-brown);
+      overflow: hidden;
+    }
+
+    .reading-modal-header {
+      background: var(--theme-brown-light);
+      border-bottom: 2px solid var(--border-dark);
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .reading-modal-body {
+      flex: 1;
+      padding: 2rem 2.25rem;
+      overflow-y: auto;
+      background: #FFFFFF;
+      color: #000;
+      font-size: 9.5pt;
+      line-height: 1.6;
+    }
+
+    .lecturer-auth-box {
+      background: #FFF7ED;
+      border: 2px dashed var(--theme-orange);
+      padding: 1rem 1.2rem;
+      border-radius: var(--radius-sm);
+      margin-top: 1.75rem;
+    }
+
+    .answer-key-content {
+      display: none;
+      background: #FEF3C7;
+      border: 2px solid var(--theme-brown);
+      border-radius: var(--radius-sm);
+      padding: 1.1rem;
+      margin-top: 0.85rem;
+    }
+
+    /* PRINT FORMAT */
+    @media print {
+      body * { visibility: hidden; }
+      #printableArea, #printableArea * { visibility: visible; }
+      #printableArea {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: #FFF !important;
+        padding: 12mm 15mm;
+      }
+      .lecturer-auth-box, .site-header, .modal-overlay, .no-print { display: none !important; }
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.65rem; }
+      .hero { padding: 1.25rem; }
+      .section-block { padding: 1.25rem; }
+      .quiz-options { grid-template-columns: 1fr; }
+      .slide-deck-content { padding: 1.25rem; }
+      .slide-title { font-size: 1.5rem; }
+      .slide-visual-grid { grid-template-columns: 1fr; }
+      .reading-modal-body { padding: 1.25rem; }
+      .nav-actions { width: 100%; justify-content: flex-start; }
+      .btn { flex: 1; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SITE HEADER / ACTION BAR -->
+  <header class="site-header no-print">
+    <div class="badge-course">
+      <span>🏛️</span> BK Anak Berkebutuhan Khusus • Pertemuan 7 (2 SKS)
+    </div>
+    <div class="nav-actions">
+      <button class="btn btn-presentation" onclick="openPresentation()">
+        <span>🖥️</span> Slide Presentasi Dosen
+      </button>
+      <button class="btn btn-worksheet" onclick="openReadingModal()">
+        <span>📖</span> Buka Soal Evaluasi &amp; Kunci Dosen
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN DOCUMENT CONTAINER -->
+  <div class="container no-print">
+
+    <!-- HERO BANNER -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-meta">
+            <span class="tag">Mata Kuliah: BK ABK</span>
+            <span class="tag">Alokasi Waktu: 2 SKS (100 Menit)</span>
+            <span class="tag">Tema: Oranye, Cokelat &amp; Dark Blue</span>
+            <span class="tag">Fokus: Bab V Bagian 3 (Bentuk Layanan BK)</span>
+          </div>
+          <h1>Peran dan Bentuk Layanan Bimbingan dan Konseling bagi ABK</h1>
+          <p>Materi pertemuan ketujuh: membedah empat pilar intervensi langsung profesi konselor sekolah bagi peserta didik berkebutuhan khusus, mencakup Layanan Orientasi aksesibilitas fisik, Layanan Informasi adaptif, Layanan Penempatan dan Penyaluran kelompok belajar/vokasi, serta Layanan Konseling Perorangan berbasis penerimaan tanpa syarat.</p>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80" alt="Konseling dan Pendampingan ABK" class="hero-illustration">
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE RENCANA PERKULIAHAN (100 MENIT) -->
+    <div class="timeline-card">
+      <div class="time-slot t1">
+        <span class="time">10 Menit</span>
+        <div class="title">Warming Up &amp; Apersepsi</div>
+        <small style="color:var(--text-muted)">Urgensi konselor sebagai fasilitator adaptasi dan advokat inklusi.</small>
+      </div>
+      <div class="time-slot t2">
+        <span class="time">45 Menit</span>
+        <div class="title">Materi Inti Komprehensif</div>
+        <small style="color:var(--text-muted)">Eksplorasi 4 Layanan Pokok: Orientasi, Informasi, Penempatan, &amp; Konseling Individual.</small>
+      </div>
+      <div class="time-slot t3">
+        <span class="time">5 Menit</span>
+        <div class="title">Games Interaktif</div>
+        <small style="color:var(--text-muted)">Studi Kasus Cepat: Menentukan intervensi layanan BK yang tepat.</small>
+      </div>
+      <div class="time-slot t4">
+        <span class="time">40 Menit</span>
+        <div class="title">Evaluasi &amp; Penutup</div>
+        <small style="color:var(--text-muted)">Pengerjaan 10 butir soal evaluasi mandiri, verifikasi sandi dosen, dan simpulan.</small>
+      </div>
+    </div>
+
+    <!-- SESI 1: PENDAHULUAN (10 MENIT) -->
+    <article class="section-block">
+      <div class="section-header">
+        <div class="section-num">01</div>
+        <div>
+          <h2>Pendahuluan: Posisi Strategis Bimbingan dan Konseling bagi ABK (10 Menit)</h2>
+          <small style="color:var(--text-muted)">Menjembatani Hambatan Biopsikososial Menuju Kemandirian Paripurna</small>
+        </div>
+      </div>
+      <p>Dalam setting pendidikan khusus maupun sekolah penyelenggara pendidikan inklusif, peserta didik berkebutuhan khusus tidak hanya menghadapi hambatan instruksional dalam memahami materi pelajaran, tetapi juga berhadapan dengan kecemasan emosional, kerentanan konsep diri, serta tantangan adaptasi lingkungan fisik dan sosial.</p>
+
+      <div class="quote-box">
+        "Keberadaan layanan bimbingan dan konseling bagi anak berkebutuhan khusus diarahkan untuk memfasilitasi pengenalan diri, mengatasi hambatan perkembangan pribadi-sosial, memfungsikan sisa potensi fungsional (residual potential), serta membuka jalan menuju kemandirian aktivitas kehidupan sehari-hari (activity in daily living)."
+        <span class="citation">— Febriani, Triyono, Handayani, &amp; Hidayat (2024, Bab V Bagian 3)</span>
+      </div>
+
+      <p>Layanan BK bukanlah pelengkap administratif, melainkan pilar pelayanan yang menjamin bahwa hak setiap anak untuk berkembang secara utuh, dihargai martabatnya, dan terfasilitasi kebutuhan aksesibilitasnya dapat terlaksana secara profesional.</p>
+    </article>
+
+    <!-- SESI 2: MATERI INTI (45 MENIT) -->
+    <article class="section-block">
+      <div class="section-header">
+        <div class="section-num">02</div>
+        <div>
+          <h2>Materi Inti: Empat Pilar Layanan Bimbingan dan Konseling bagi ABK (45 Menit)</h2>
+          <small style="color:var(--text-muted)">Kajian Komprehensif Berdasarkan Buku Ajar Bab V Bagian 3</small>
+        </div>
+      </div>
+
+      <!-- 1. LAYANAN ORIENTASI -->
+      <h3>A. Layanan Orientasi: Adaptasi Lingkungan &amp; Aksesibilitas Fisik</h3>
+      <p>Layanan orientasi merupakan layanan bimbingan yang memungkinkan peserta didik memahami dan menyesuaikan diri dengan lingkungan baru, meliputi suasana sekolah, kurikulum, pendidik, tenaga kependidikan, rekan sebaya, sarana prasarana, serta tata tertib yang berlaku.</p>
+
+      <div class="feature-grid">
+        <div class="feature-item accent-navy">
+          <strong>1. Pengenalan Aksesibilitas Fisik</strong>
+          Khusus bagi ABK, orientasi sangat ditekankan pada pengenalan dan pemanfaatan fasilitas fisik aksesibel, seperti jalur pemandu (<em>guiding blocks</em>) bagi tunanetra, bidang miring (<em>ramp</em>) bagi pengguna kursi roda, toilet ramah disabilitas, serta ruang sumber (<em>resource room</em>).
+        </div>
+        <div class="feature-item accent-orange">
+          <strong>2. Orientasi Mobilitas &amp; Spasial</strong>
+          Membimbing anak tunanetra dan tunadaksa agar menguasai tata letak ruangan, arah tangga, letak pintu keluar darurat, dan sarana sanitasi guna membangun rasa aman serta mencegah terjadinya disorientasi dan kecelakaan fisik.
+        </div>
+        <div class="feature-item accent-brown">
+          <strong>3. Sosialisasi Iklim Inklusif</strong>
+          Memperkenalkan ABK kepada seluruh warga sekolah reguler sekaligus memberikan pemahaman kepada rekan sebaya agar terbangun sikap empati, penerimaan tulus, dan budaya anti-perundungan (<em>anti-bullying</em>).
+        </div>
+      </div>
+
+      <!-- 2. LAYANAN INFORMASI -->
+      <h3>B. Layanan Informasi: Edukasi Adaptif &amp; Pengambilan Keputusan</h3>
+      <p>Layanan informasi bertujuan membekali peserta didik dengan berbagai data, pemahaman, dan wawasan mengenai potensi diri, kesehatan, lingkungan sosial, peluang pendidikan lanjutan, serta dunia kerja.</p>
+
+      <div class="example-box">
+        <strong>Pemberian Informasi Adaptif Berdasarkan Karakteristik Ketunaan:</strong><br>
+        • <em>Bagi Siswa Tunanetra:</em> Disampaikan melalui format audio, narasi lisan deskriptif, atau buku panduan berhuruf Braille.<br>
+        • <em>Bagi Siswa Tunarungu:</em> Mengutamakan media visual konkret, infografis berwarna, video dengan teks terjemahan (<em>closed captions</em>), dan didampingi juru bahasa isyarat.<br>
+        • <em>Bagi Siswa Spektrum Autisme &amp; Slow Learner:</em> Menggunakan kartu visual sederhana (<em>Picture Exchange Communication System / PECS</em>), jadwal visual terstruktur, serta bahasa instruksi langsung yang bebas dari kalimat kiasan.<br>
+        • <em>Materi Kunci:</em> Pendidikan bina diri, kesehatan reproduksi dan perlindungan diri dari kekerasan seksual, informasi bakat minat, serta prospek pelatihan vokasional.
+      </div>
+
+      <!-- 3. LAYANAN PENEMPATAN DAN PENYALURAN -->
+      <h3>C. Layanan Penempatan dan Penyaluran: Optimalisasi Potensi Belajar &amp; Karier</h3>
+      <p>Layanan ini membantu peserta didik memperoleh penempatan dan penyaluran yang tepat di dalam kelas, kelompok belajar, peminatan studi, kegiatan ekstrakurikuler, serta transisi ke dunia kerja yang selaras dengan kapasitas dan potensinya.</p>
+
+      <div class="feature-grid">
+        <div class="feature-item">
+          <strong>Penempatan Posisi Duduk di Kelas</strong>
+          Menempatkan anak *low vision* atau anak tunarungu di barisan depan dekat guru dengan pencahayaan memadai, serta menempatkan tunadaksa dekat pintu akses yang luas tanpa undakan.
+        </div>
+        <div class="feature-item accent-orange">
+          <strong>Penyaluran Kelompok Sebaya (Peer Tutoring)</strong>
+          Mengelompokkan ABK bersama teman sebaya yang memiliki kepedulian tinggi untuk menjadi tutor pendamping dalam aktivitas akademik dan sosial.
+        </div>
+        <div class="feature-item accent-brown">
+          <strong>Penyaluran Vokasional &amp; Karier</strong>
+          Mengarahkan bakat khusus anak (seperti seni musik, kerajinan tangan, desain grafis, tata boga) ke pusat magang kerja atau lembaga pelatihan kerja (LPK) yang ramah disabilitas.
+        </div>
+      </div>
+
+      <!-- 4. LAYANAN KONSELING PERORANGAN -->
+      <h3>D. Layanan Konseling Perorangan: Relasi Terapeutik &amp; Penerimaan Tanpa Syarat</h3>
+      <p>Layanan konseling perorangan (individual) adalah layanan tatap muka langsung, rahasia, dan mendalam antara konselor dengan konseli ABK guna mengentaskan masalah pribadi, mereduksi tekanan emosional, dan mengembangkan potensi diri.</p>
+
+      <div class="quote-box">
+        "Konseling individual bagi anak berkebutuhan khusus menuntut konselor memiliki kesabaran ekstra, kehangatan empati, dan keterampilan mendengarkan secara aktif. Konselor harus mampu menyesuaikan cara berkomunikasi dengan modalitas bahasa anak, tidak terburu-buru memotong kalimat anak yang mengalami hambatan bicara, serta memandang anak sebagai pribadi berdaya yang berhak mengambil keputusan atas hidupnya."
+        <span class="citation">— Rujukan Bab V Bagian 3 (Layanan Konseling Individual)</span>
+      </div>
+
+      <ul class="detailed-list">
+        <li><strong>Mengikis Inferioritas Diri:</strong> Membantu anak berdamai dengan kondisi disabilitasnya, membuang rasa minder, dan membangun konsep diri yang positif.</li>
+        <li><strong>Katarsis Emosional:</strong> Memberikan ruang yang aman bagi anak untuk menumpahkan rasa takut, kecemasan terhadap perlakuan lingkungan, atau frustrasi akademik.</li>
+        <li><strong>Kontrak Perilaku &amp; Regulasi Diri:</strong> Bersama anak merumuskan target adaptif sederhana untuk melatih kemandirian harian (<em>activity in daily living</em>) dan kepatuhan sosial.</li>
+      </ul>
+    </article>
+
+    <!-- SESI 3: GAMES INTERAKTIF (5 MENIT) -->
+    <article class="section-block">
+      <div class="section-header">
+        <div class="section-num">03</div>
+        <div>
+          <h2>Games Interaktif: Audit Kasus Intervensi Layanan BK (5 Menit)</h2>
+          <small style="color:var(--text-muted)">Analisis Ketepatan Memilih Bentuk Layanan BK bagi ABK</small>
+        </div>
+      </div>
+      <div class="game-card">
+        <h4>⚡ Uji Kasus Diagnostik Layanan BK</h4>
+        <p style="margin-top:0.4rem">Dimas (13 tahun, siswa tunadaksa pemakai kursi roda) baru saja pindah ke sekolah menengah reguler. Di minggu pertama, Dimas tidak berani pergi ke toilet sekolah karena tidak mengetahui letak ramp kursi roda, dan ia merasa cemas apakah toilet sekolah memiliki pintu yang cukup lebar untuk kursi rodanya. Bentuk layanan BK manakah yang paling mendesak dan prioritas diberikan oleh guru BK kepada Dimas?</p>
+        <div class="quiz-options">
+          <button class="quiz-btn" onclick="checkAnswer(false)">A. Layanan Konseling Perorangan untuk mendiagnosis trauma masa kecil Dimas.</button>
+          <button class="quiz-btn" onclick="checkAnswer(true)">B. Layanan Orientasi khusus pengenalan dan pemanfaatan aksesibilitas fisik lingkungan sekolah.</button>
+          <button class="quiz-btn" onclick="checkAnswer(false)">C. Layanan Penempatan dan Penyaluran ke bursa kerja khusus disabilitas.</button>
+          <button class="quiz-btn" onclick="checkAnswer(false)">D. Mengeluarkan Dimas dari sekolah karena sarana fisik merepotkan guru.</button>
+        </div>
+        <div id="quiz-feedback" class="quiz-feedback"></div>
+      </div>
+    </article>
+
+    <!-- SESI 4: TANYA JAWAB & CLOSING -->
+    <article class="section-block">
+      <div class="section-header">
+        <div class="section-num">04</div>
+        <div>
+          <h2>Tanya Jawab &amp; Closing Statement</h2>
+          <small style="color:var(--text-muted)">Komitmen Profesional Konselor dalam Menghadirkan Layanan Nyata</small>
+        </div>
+      </div>
+      <p><strong>Fokus Diskusi Kelas:</strong></p>
+      <ul class="detailed-list">
+        <li>Bagaimana guru BK dapat menyusun media layanan informasi yang efektif bagi siswa dengan hambatan intelektual (tunagrahita/slow learner)?</li>
+        <li>Mengapa layanan penempatan posisi duduk di ruang kelas inklusi menjadi bagian penting dari intervensi bimbingan dan konseling?</li>
+      </ul>
+      <div class="quote-box" style="border-left-color: var(--theme-orange); background-color: var(--theme-orange-light);">
+        "Layanan bimbingan dan konseling bagi ABK bukanlah teori yang berhenti pada catatan administrasi, melainkan sentuhan nyata yang membebaskan anak dari isolasi fisik, keterbatasan informasi, dan luka emosional. Konselor adalah perajin jembatan yang menghubungkan keunikan anak dengan dunia masa depan yang mandiri."
+        <span class="citation">— Penutup Perkuliahan Pertemuan ke-7 (Bab V Bagian 3)</span>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- PRESENTATION MODAL (SLIDE DECK) -->
+  <div id="presentationModal" class="modal-overlay">
+    <div class="slide-deck">
+      <div class="slide-deck-header">
+        <div style="font-weight:800; font-size:1.05rem; display:flex; align-items:center; gap:0.5rem;">
+          <span style="background:var(--theme-navy); color:#FFF; border:1.5px solid #000; padding:2px 8px; border-radius:6px;">Slide Deck</span>
+          <span>Pertemuan VII: Peran &amp; Bentuk Layanan BK bagi ABK</span>
+        </div>
+        <button class="btn btn-worksheet" style="padding:0.35rem 0.8rem; font-size:0.8rem;" onclick="closePresentation()">Keluar (Esc)</button>
+      </div>
+
+      <!-- SLIDE 1: SAMPUL -->
+      <div class="slide-deck-content active" id="slide-1">
+        <div class="slide-subtitle">MATA KULIAH: BIMBINGAN KONSELING ABK (2 SKS)</div>
+        <h1 class="slide-title">Bentuk Layanan Bimbingan &amp; Konseling bagi ABK</h1>
+        <div class="slide-visual-grid">
+          <div>
+            <p style="font-size:1.05rem; margin-bottom:1.25rem;">Mengkaji empat intervensi langsung profesi konselor sekolah: Layanan Orientasi, Layanan Informasi, Layanan Penempatan &amp; Penyaluran, serta Layanan Konseling Perorangan.</p>
+            <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+              <span class="tag" style="background:var(--theme-orange-light)">Durasi: 100 Menit</span>
+              <span class="tag" style="background:var(--theme-navy-light)">Rujukan: Bab V Bagian 3</span>
+            </div>
+          </div>
+          <div>
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Slide Sampul" style="width:100%; border:2px solid #000; border-radius:10px; box-shadow:4px 4px 0px var(--theme-navy);">
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2: LAYANAN ORIENTASI & INFORMASI -->
+      <div class="slide-deck-content" id="slide-2">
+        <div class="slide-subtitle">FONDASI ADAPTASI &amp; WAWASAN</div>
+        <h2 class="slide-title">Layanan Orientasi &amp; Informasi Adaptif</h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; margin-top:0.85rem;">
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-orange-dark); display:block; margin-bottom:0.25rem;">Orientasi Aksesibilitas Fisik</strong>
+            Mengenalkan sarana fisik ramah disabilitas: ramp, guiding block, toilet aksesibel, ruang sumber, dan tata ruang kelas.
+          </div>
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-navy); display:block; margin-bottom:0.25rem;">Orientasi Iklim Sosial</strong>
+            Membangun penerimaan rekan sebaya di sekolah reguler dan mengikis stigma negatif terhadap anak berkebutuhan khusus.
+          </div>
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-brown); display:block; margin-bottom:0.25rem;">Informasi Multi-Format</strong>
+            Menyajikan data bakat, kesehatan reproduksi, dan aturan sekolah melalui media audio, visual konkret, atau huruf Braille.
+          </div>
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-orange-dark); display:block; margin-bottom:0.25rem;">Kemandirian Pengambilan Keputusan</strong>
+            Membekali anak dengan pemahaman realistis mengenai kelebihan dan kekurangannya untuk masa depan.
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3: PENEMPATAN & PENYALURAN -->
+      <div class="slide-deck-content" id="slide-3">
+        <div class="slide-subtitle">OPTIMALISASI LINGKUNGAN BELAJAR &amp; KARIER</div>
+        <h2 class="slide-title">Layanan Penempatan dan Penyaluran</h2>
+        <div class="slide-visual-grid">
+          <div>
+            <ul class="detailed-list" style="font-size:0.98rem; line-height:1.7;">
+              <li><strong>Penempatan Duduk di Kelas:</strong> Menyesuaikan posisi duduk siswa sesuai modalitas sensori (dekat guru, pencahayaan optimal, bebas rintangan gerak).</li>
+              <li><strong>Penyaluran Kelompok Sebaya:</strong> Membentuk tim belajar ramah dengan sistem tutor sebaya (*peer tutoring*).</li>
+              <li><strong>Penyaluran Ekstrakurikuler &amp; Vokasi:</strong> Mengarahkan bakat seni, kriya, dan teknologi ke wadah keterampilan kerja mandiri (*life skills*).</li>
+            </ul>
+          </div>
+          <div>
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="Slide Penempatan" style="width:100%; border:2px solid #000; border-radius:10px; box-shadow:4px 4px 0px var(--theme-brown);">
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 4: KONSELING PERORANGAN -->
+      <div class="slide-deck-content" id="slide-4">
+        <div class="slide-subtitle">HUBUNGAN TERAPEUTIK MENDALAM</div>
+        <h2 class="slide-title">Layanan Konseling Perorangan (Individual)</h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; margin-top:0.85rem;">
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-navy); display:block; margin-bottom:0.3rem;">Ruang Aman &amp; Rahasia</strong>
+            Menjadi wadah katarsis emosi bagi anak untuk mengekspresikan ketakutan, amarah, dan kecemasan tanpa dihakimi.
+          </div>
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-orange-dark); display:block; margin-bottom:0.3rem;">Komunikasi Adaptif</strong>
+            Konselor menyesuaikan diri dengan bahasa isyarat, kartu visual PECS, intonasi tenang, dan kesabaran ekstra.
+          </div>
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-brown); display:block; margin-bottom:0.3rem;">Penerimaan Tanpa Syarat</strong>
+            Membangun kembali harga diri (*self-esteem*) konseli dan menumbuhkan rasa berdaya di tengah keterbatasan fisik/mental.
+          </div>
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-navy); display:block; margin-bottom:0.3rem;">Fokus Solutif ADL</strong>
+            Menyepakati target perilaku bertahap guna meningkatkan kemandirian aktivitas kehidupan sehari-hari anak.
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 5: SIMPULAN -->
+      <div class="slide-deck-content" id="slide-5">
+        <div class="slide-subtitle">SIMPULAN &amp; MANDAT KONSELI</div>
+        <h2 class="slide-title">Sintesis Layanan Bimbingan &amp; Konseling</h2>
+        <div class="quote-box" style="font-size:1.05rem; margin-top:1.25rem;">
+          "Empat pilar layanan BK bekerja secara simultan: orientasi membuka akses, informasi memberi arah, penempatan mewadahi potensi, dan konseling perorangan memulihkan jiwa anak menuju kemandirian hidup sejati."
+        </div>
+        <p style="margin-top:1.5rem; font-size:0.98rem;">
+          <strong>Aktivitas Mandiri:</strong> Silakan buka jendela soal evaluasi untuk menyelesaikan 10 butir soal pemahaman mandiri. Dosen pengampu dapat membuka lembar kunci jawaban melalui verifikasi sandi khusus.
+        </p>
+      </div>
+
+      <!-- FOOTER CONTROLS -->
+      <div class="slide-deck-footer">
+        <div style="font-weight:700;" id="slideIndicator">Slide 1 dari 5</div>
+        <div style="display:flex; gap:0.5rem;">
+          <button class="btn" onclick="prevSlide()">◀ Sebelumnya</button>
+          <button class="btn btn-presentation" onclick="nextSlide()">Berikutnya ▶</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL BACA & CETAK: SOAL EVALUASI 10 PG + KUNCI DOSEN -->
+  <div id="readingModal" class="modal-overlay">
+    <div class="reading-modal-container">
+      <div class="reading-modal-header">
+        <div style="font-weight:800; font-size:1rem; display:flex; align-items:center; gap:0.5rem; color:var(--theme-navy);">
+          <span>📄 Lembar Evaluasi &amp; Kunci Dosen: Bentuk Layanan BK bagi ABK</span>
+        </div>
+        <div style="display:flex; gap:0.5rem;">
+          <button class="btn btn-worksheet" style="padding:0.35rem 0.8rem; font-size:0.82rem;" onclick="triggerPrint()">
+            🖨️ Cetak Lembar Soal (PDF)
+          </button>
+          <button class="btn" style="padding:0.35rem 0.8rem; font-size:0.82rem;" onclick="closeReadingModal()">
+            Tutup (Esc)
+          </button>
+        </div>
+      </div>
+      
+      <!-- AREA DOKUMEN EVALUASI -->
+      <div class="reading-modal-body" id="printableArea">
+        <div style="text-align:center; border-bottom:2px solid #000; padding-bottom:10px; margin-bottom:16px;">
+          <h2 style="font-size:14pt; font-weight:800; text-transform:uppercase; margin-bottom:3px;">Evaluasi Perkuliahan: Peran &amp; Bentuk Layanan BK bagi ABK</h2>
+          <h3 style="font-size:11pt; font-weight:600; margin-bottom:3px;">Mata Kuliah: Bimbingan dan Konseling ABK • Pertemuan 7</h3>
+          <p style="font-size:9pt; color:#333;">Materi: Bab V Bagian 3 (Layanan Orientasi, Informasi, Penempatan/Penyaluran, &amp; Konseling Individual)</p>
+        </div>
+
+        <table style="width:100%; margin-bottom:12px; font-size:9.5pt; border-collapse:collapse;">
+          <tr>
+            <td style="width:140px; padding:2px 0;"><strong>Nama Mahasiswa</strong></td>
+            <td style="padding:2px 0;">: .................................................................................</td>
+            <td style="width:80px; padding:2px 0;"><strong>NIM</strong></td>
+            <td style="padding:2px 0;">: ......................................</td>
+          </tr>
+          <tr>
+            <td style="padding:2px 0;"><strong>Program Studi</strong></td>
+            <td style="padding:2px 0;">: .................................................................................</td>
+            <td style="padding:2px 0;"><strong>Kelas</strong></td>
+            <td style="padding:2px 0;">: ......................................</td>
+          </tr>
+        </table>
+
+        <div style="margin-bottom:12px; font-size:9pt; background:#FFF7ED; padding:6px 10px; border:1px solid #FED7AA; border-radius:4px;">
+          <strong>Petunjuk Mengerjakan:</strong> Pilihlah satu jawaban yang paling tepat (A, B, C, atau D) dengan memberi tanda silang (X) atau melingkari huruf pilihan Anda!
+        </div>
+
+        <!-- 10 SOAL PILIHAN GANDA -->
+        <div style="font-size:9pt; line-height:1.5;">
+
+          <!-- SOAL 1 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>1. Layanan bimbingan yang bertujuan membantu peserta didik berkebutuhan khusus mengenali dan menyesuaikan diri dengan lingkungan sekolah baru, tata tertib, dan sarana fisik disebut...</strong></p>
+            <div style="padding-left:15px;">
+              A. Layanan Mediasi<br>
+              B. Layanan Orientasi<br>
+              C. Layanan Advokasi<br>
+              D. Layanan Konsultasi
+            </div>
+          </div>
+
+          <!-- SOAL 2 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>2. Penekanan khusus yang membedakan pelaksanaan layanan orientasi bagi ABK dibanding siswa reguler terletak pada pengenalan dan pemanfaatan...</strong></p>
+            <div style="padding-left:15px;">
+              A. Aksesibilitas fisik sekolah (ramp, guiding block, toilet disabilitas)<br>
+              B. Tarif SPP dan administrasi keuangan sekolah<br>
+              C. Lokasi kantin dan tempat parkir kendaraan bermotor<br>
+              D. Daftar nama seluruh alumni yang telah lulus
+            </div>
+          </div>
+
+          <!-- SOAL 3 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>3. Layanan BK yang membekali peserta didik dengan data mengenai potensi diri, kesehatan, pergaulan sosial, dan arah karier masa depan disebut...</strong></p>
+            <div style="padding-left:15px;">
+              A. Layanan Informasi<br>
+              B. Layanan Penempatan<br>
+              C. Layanan Konferensi Kasus<br>
+              D. Layanan Kolaborasi
+            </div>
+          </div>
+
+          <!-- SOAL 4 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>4. Dalam memberikan layanan informasi kepada siswa dengan hambatan pendengaran (tunarungu), strategi adaptif yang paling tepat diterapkan konselor adalah...</strong></p>
+            <div style="padding-left:15px;">
+              A. Memberikan rekaman suara audio berdurasi panjang<br>
+              B. Menggunakan media visual konkret, tulisan bergambar, dan juru bahasa isyarat<br>
+              C. Berbicara dengan intonasi berteriak keras dari belakang siswa<br>
+              D. Mengharuskan siswa menghafalkan teks bacaan konseptual tanpa contoh
+            </div>
+          </div>
+
+          <!-- SOAL 5 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>5. Membantu menempatkan siswa low vision di barisan kursi terdepan dekat guru dengan pencahayaan memadai merupakan wujud nyata dari pelaksanaan...</strong></p>
+            <div style="padding-left:15px;">
+              A. Layanan Konseling Kelompok<br>
+              B. Layanan Penempatan dan Penyaluran di dalam kelas<br>
+              C. Layanan Orientasi Masa Depan<br>
+              D. Layanan Terapi Okupasi
+            </div>
+          </div>
+
+          <!-- SOAL 6 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>6. Penyaluran siswa berkebutuhan khusus ke dalam kelompok belajar ramah sebaya bertujuan untuk...</strong></p>
+            <div style="padding-left:15px;">
+              A. Memisahkan siswa ABK dari pergaulan anak-anak pintar<br>
+              B. Membangun hubungan tutor sebaya (peer tutoring) dan memfasilitasi interaksi sosial yang sehat<br>
+              C. Mengurangi beban mengajar guru kelas secara sepihak<br>
+              D. Memberikan tugas rumah dua kali lebih banyak kepada siswa ABK
+            </div>
+          </div>
+
+          <!-- SOAL 7 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>7. Layanan tatap muka langsung secara mendalam dan rahasia antara konselor dengan peserta didik ABK guna mengentaskan masalah pribadi-sosial disebut...</strong></p>
+            <div style="padding-left:15px;">
+              A. Layanan Konseling Perorangan (Individual)<br>
+              B. Layanan Bimbingan Klasikal<br>
+              C. Layanan Penguasaan Konten<br>
+              D. Layanan Bimbingan Kelompok
+            </div>
+          </div>
+
+          <!-- SOAL 8 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>8. Sikap paling mendasar yang wajib dimiliki seorang konselor sekolah saat menyelenggarakan konseling perorangan bagi siswa berkebutuhan khusus adalah...</strong></p>
+            <div style="padding-left:15px;">
+              A. Menghakimi kelemahan fisik anak agar anak merasa bersalah<br>
+              B. Penerimaan tanpa syarat (unconditional positive regard), empati tulus, dan kesabaran komunikasi<br>
+              C. Memotong pembicaraan anak agar durasi konseling berlangsung cepat<br>
+              D. Menceritakan seluruh rahasia konseling kepada orang lain
+            </div>
+          </div>
+
+          <!-- SOAL 9 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>9. Media komunikasi visual seperti PECS (Picture Exchange Communication System) sangat efektif digunakan konselor dalam konseling individual bersama anak dengan karakteristik...</strong></p>
+            <div style="padding-left:15px;">
+              A. Tunanetra buta total<br>
+              B. Spektrum Autisme dan hambatan komunikasi verbal<br>
+              C. Anak berbakat istimewa (gifted)<br>
+              D. Anak dengan gangguan penglihatan warna
+            </div>
+          </div>
+
+          <!-- SOAL 10 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>10. Muara akhir dari seluruh pelaksanaan bentuk layanan BK (orientasi, informasi, penempatan, dan konseling individual) bagi ABK adalah...</strong></p>
+            <div style="padding-left:15px;">
+              A. Ketergantungan seumur hidup kepada guru BK<br>
+              B. Tercapainya kemandirian hidup, penerimaan diri yang harmonis, dan optimalisasi sisa kemampuan (residual potential)<br>
+              C. Menyamakan skor IQ anak ABK dengan standar anak normal<br>
+              D. Menggantikan seluruh peran orang tua di lingkungan rumah
+            </div>
+          </div>
+
+        </div>
+
+        <!-- VERIFIKASI DOSEN KHUSUS UNTUK MEMBUKA KUNCI -->
+        <div class="lecturer-auth-box">
+          <div style="font-weight:700; color:var(--theme-navy); margin-bottom:0.35rem;">
+            🔒 Kunci Jawaban Resmi (Akses Khusus Dosen Pengampu)
+          </div>
+          <p style="font-size:8.5pt; margin-bottom:0.5rem; color:var(--text-muted);">
+            Masukkan kode verifikasi dosen untuk membuka kunci jawaban dan pembahasan Bab V Bagian 3:
+          </p>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+            <input type="password" id="lecturerPass" placeholder="Masukkan Sandi Dosen..." style="padding:0.35rem 0.75rem; border:1.5px solid var(--border-dark); border-radius:4px; font-size:8.5pt;">
+            <button class="btn btn-presentation" style="padding:0.35rem 0.85rem; font-size:8pt;" onclick="unlockAnswerKey()">Verifikasi Sandi</button>
+          </div>
+          
+          <div id="keyContent" class="answer-key-content">
+            <h4 style="color:var(--theme-brown-dark); margin-bottom:0.4rem; font-size:10pt;">Kunci Jawaban 10 Soal Evaluasi (Bab V Bagian 3):</h4>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap:0.35rem; font-size:8.5pt; font-weight:700;">
+              <div>1. B (Layanan Orientasi)</div>
+              <div>2. A (Aksesibilitas Fisik)</div>
+              <div>3. A (Layanan Informasi)</div>
+              <div>4. B (Media Visual &amp; Isyarat)</div>
+              <div>5. B (Penempatan Kelas)</div>
+              <div>6. B (Peer Tutoring &amp; Relasi)</div>
+              <div>7. A (Konseling Individual)</div>
+              <div>8. B (Penerimaan Tanpa Syarat)</div>
+              <div>9. B (Autisme &amp; Komunikasi)</div>
+              <div>10. B (Kemandirian &amp; Potensi)</div>
+            </div>
+            <div style="margin-top:0.6rem; font-size:8pt; color:#78350F; font-style:italic;">
+              *Catatan Dosen: Kunci telah diverifikasi sesuai Buku Pendidikan Anak Berkebutuhan Khusus Bab V Bagian 3.
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:20px; display:flex; justify-content:space-between; font-size:9pt;">
+          <div>
+            <strong>Tanda Tangan Mahasiswa:</strong><br><br><br>
+            (.......................................................)
+          </div>
+          <div style="text-align:center;">
+            <strong>Verifikasi Nilai Dosen Pengampu:</strong><br><br><br>
+            (.......................................................)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT CONTROLLER -->
+  <script>
+    /* SLIDE PRESENTATION LOGIC */
+    let currentSlide = 1;
+    const totalSlides = 5;
+
+    function openPresentation() {
+      document.getElementById('presentationModal').classList.add('active');
+      showSlide(currentSlide);
+    }
+
+    function closePresentation() {
+      document.getElementById('presentationModal').classList.remove('active');
+    }
+
+    function showSlide(index) {
+      for (let i = 1; i <= totalSlides; i++) {
+        const slide = document.getElementById('slide-' + i);
+        if (slide) slide.classList.remove('active');
+      }
+      const activeSlide = document.getElementById('slide-' + index);
+      if (activeSlide) activeSlide.classList.add('active');
+      document.getElementById('slideIndicator').innerText = `Slide ${index} dari ${totalSlides}`;
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        showSlide(currentSlide);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        showSlide(currentSlide);
+      }
+    }
+
+    /* READING & PRINT MODAL LOGIC */
+    function openReadingModal() {
+      document.getElementById('readingModal').classList.add('active');
+    }
+
+    function closeReadingModal() {
+      document.getElementById('readingModal').classList.remove('active');
+    }
+
+    function triggerPrint() {
+      window.print();
+    }
+
+    // Keyboard navigation (Esc & Arrows)
+    document.addEventListener('keydown', function(e) {
+      const presModal = document.getElementById('presentationModal');
+      const readModal = document.getElementById('readingModal');
+
+      if (presModal.classList.contains('active')) {
+        if (e.key === 'ArrowRight' || e.key === 'Space') {
+          nextSlide();
+        } else if (e.key === 'ArrowLeft') {
+          prevSlide();
+        } else if (e.key === 'Escape') {
+          closePresentation();
+        }
+      } else if (readModal.classList.contains('active')) {
+        if (e.key === 'Escape') {
+          closeReadingModal();
+        }
+      }
+    });
+
+    /* QUIZ PEMBUKA LOGIC */
+    function checkAnswer(isCorrect) {
+      const feedback = document.getElementById('quiz-feedback');
+      feedback.style.display = 'block';
+      if (isCorrect) {
+        feedback.style.backgroundColor = '#FFEDD5';
+        feedback.style.borderColor = '#EA580C';
+        feedback.style.color = '#7C2D12';
+        feedback.innerText = '✅ TEPAT SEKALI! Bagi siswa ABK baru seperti Dimas, Layanan Orientasi sangat ditekankan pada pengenalan dan pemanfaatan aksesibilitas fisik lingkungan sekolah (seperti jalur ramp dan toilet ramah disabilitas) untuk menjamin rasa aman dan kemandirian mobilitasnya.';
+      } else {
+        feedback.style.backgroundColor = '#FEE2E2';
+        feedback.style.borderColor = '#DC2626';
+        feedback.style.color = '#991B1B';
+        feedback.innerText = '❌ KURANG TEPAT. Ingat kembali fokus Bab V Bagian 3: Sebelum masuk ke intervensi lain, anak baru membutuhkan Layanan Orientasi khusus pengenalan sarana aksesibilitas fisik lingkungan sekolah.';
+      }
+    }
+
+    /* VERIFIKASI KUNCI JAWABAN DOSEN */
+    function unlockAnswerKey() {
+      const pass = document.getElementById('lecturerPass').value;
+      const keyBox = document.getElementById('keyContent');
+      // Password khusus dosen Pertemuan 7: DOSENBK7
+      if (pass === 'DOSENBK7' || pass === 'dosenbk7') {
+        keyBox.style.display = 'block';
+        alert('Kunci jawaban Bab V Bagian 3 (Bentuk Layanan BK bagi ABK) berhasil dibuka.');
+      } else {
+        alert('Sandi salah. Akses kunci jawaban hanya diperuntukkan bagi dosen pengampu.');
+      }
+    }
+  </script>
+</body>
+</html>
