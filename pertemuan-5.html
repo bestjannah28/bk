@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pertemuan 5: Landasan Yuridis Pendidikan &amp; BK bagi ABK</title>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-canvas: #FFFBF5;
+      --card-bg: #FFFFFF;
+      --text-main: #0B192C;
+      --text-muted: #534538;
+      
+      /* Palet Warna Tema: Dark Blue, Oranye, & Cokelat */
+      --theme-navy: #0B192C;
+      --theme-navy-light: #EBF1F8;
+      --theme-navy-dark: #050E1A;
+      
+      --theme-orange: #EA580C;
+      --theme-orange-light: #FFEDD5;
+      --theme-orange-dark: #C2410C;
+      
+      --theme-brown: #78350F;
+      --theme-brown-light: #F7EFE9;
+      --theme-brown-dark: #451A03;
+      
+      --border-dark: #0B192C;
+      --shadow-solid: 4px 4px 0px #0B192C;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      line-height: 1.65;
+      font-size: 0.98rem;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TOP BAR / NAVIGATION */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(255, 251, 245, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 2px solid var(--border-dark);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .badge-course {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--theme-orange-light);
+      border: 2px solid var(--border-dark);
+      box-shadow: 2px 2px 0 var(--border-dark);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--theme-orange-dark);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.05rem;
+      font-weight: 700;
+      font-size: 0.88rem;
+      border-radius: var(--radius-sm);
+      border: 2px solid var(--border-dark);
+      box-shadow: var(--shadow-solid);
+      transition: all 0.15s ease-in-out;
+      text-decoration: none;
+      color: var(--text-main);
+      background-color: #FFFFFF;
+    }
+
+    .btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px var(--border-dark);
+    }
+
+    .btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--border-dark);
+    }
+
+    .btn-presentation {
+      background-color: var(--theme-navy);
+      color: #FFFFFF;
+    }
+
+    .btn-worksheet {
+      background-color: var(--theme-orange);
+      color: #FFFFFF;
+    }
+
+    /* CONTAINER & HERO */
+    .container {
+      max-width: 1040px;
+      margin: 1.5rem auto;
+      padding: 0 1.5rem 3.5rem 1.5rem;
+    }
+
+    .hero {
+      background: #FFFFFF;
+      border: 2px solid var(--border-dark);
+      box-shadow: var(--shadow-solid);
+      border-radius: var(--radius-md);
+      padding: 2.25rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.85rem;
+    }
+
+    .tag {
+      background: var(--bg-canvas);
+      border: 1.5px solid var(--border-dark);
+      border-radius: 999px;
+      padding: 0.2rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 1fr;
+      gap: 1.75rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.5px;
+      color: var(--theme-navy);
+    }
+
+    .hero p {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .hero-illustration {
+      width: 100%;
+      height: 220px;
+      border-radius: var(--radius-sm);
+      border: 2px solid var(--border-dark);
+      box-shadow: 4px 4px 0px var(--theme-orange);
+      object-fit: cover;
+    }
+
+    /* TIMELINE SECTION */
+    .timeline-card {
+      background: #FFFFFF;
+      border: 2px solid var(--border-dark);
+      box-shadow: var(--shadow-solid);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.75rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.85rem;
+    }
+
+    .time-slot {
+      padding: 0.85rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px dashed var(--border-dark);
+    }
+
+    .time-slot.t1 { background: var(--theme-navy-light); }
+    .time-slot.t2 { background: #FFFFFF; }
+    .time-slot.t3 { background: var(--theme-orange-light); }
+    .time-slot.t4 { background: var(--theme-brown-light); }
+
+    .time-slot .time {
+      font-weight: 800;
+      font-size: 0.85rem;
+      display: inline-block;
+      margin-bottom: 0.2rem;
+      color: var(--theme-navy);
+    }
+
+    .time-slot .title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--theme-brown-dark);
+    }
+
+    /* SECTION CARD */
+    .section-block {
+      background: var(--card-bg);
+      border: 2px solid var(--border-dark);
+      box-shadow: var(--shadow-solid);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 2px solid var(--bg-canvas);
+      padding-bottom: 0.85rem;
+    }
+
+    .section-num {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--theme-navy);
+      color: #FFFFFF;
+      border: 2px solid var(--border-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    h2 { font-size: 1.45rem; font-weight: 800; color: var(--theme-navy); }
+    h3 { font-size: 1.15rem; font-weight: 700; margin: 1.25rem 0 0.5rem 0; color: var(--theme-orange-dark); }
+    p { margin-bottom: 0.85rem; color: #2D241E; }
+
+    /* QUOTE BOX */
+    .quote-box {
+      background-color: var(--theme-orange-light);
+      border-left: 5px solid var(--theme-orange);
+      padding: 1.1rem 1.35rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 1.25rem 0;
+      font-style: italic;
+      color: #431407;
+      border-top: 1px solid #FED7AA;
+      border-right: 1px solid #FED7AA;
+      border-bottom: 1px solid #FED7AA;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .quote-box .citation {
+      display: block;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 0.82rem;
+      margin-top: 0.4rem;
+      color: var(--theme-brown);
+    }
+
+    /* EXAMPLE BOX */
+    .example-box {
+      background-color: #FFFFFF;
+      border: 1.5px solid var(--theme-brown);
+      border-left: 5px solid var(--theme-brown);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.25rem;
+      margin: 1.1rem 0;
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+
+    .example-box strong {
+      color: var(--theme-brown-dark);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    /* GRID LISTS */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.1rem;
+      margin: 1.1rem 0;
+    }
+
+    .feature-item {
+      border: 2px solid var(--border-dark);
+      border-radius: var(--radius-sm);
+      padding: 1.15rem;
+      background: #FFFFFF;
+      box-shadow: 3px 3px 0 var(--border-dark);
+    }
+
+    .feature-item.accent-orange { background: var(--theme-orange-light); }
+    .feature-item.accent-brown { background: var(--theme-brown-light); }
+    .feature-item.accent-navy { background: var(--theme-navy-light); }
+
+    .feature-item strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-size: 1rem;
+      color: var(--theme-navy);
+    }
+
+    ol.detailed-list, ul.detailed-list {
+      padding-left: 1.35rem;
+      margin-bottom: 1rem;
+    }
+
+    ol.detailed-list li, ul.detailed-list li {
+      margin-bottom: 0.5rem;
+      padding-left: 0.25rem;
+    }
+
+    /* GAMES CARD */
+    .game-card {
+      background: #FFFFFF;
+      border: 2px solid var(--border-dark);
+      box-shadow: var(--shadow-solid);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-top: 0.85rem;
+    }
+
+    .quiz-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .quiz-btn {
+      text-align: left;
+      background: #FFFFFF;
+      border: 2px solid var(--border-dark);
+      padding: 0.85rem 1rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 2px 2px 0 var(--border-dark);
+      transition: all 0.1s ease;
+      color: var(--theme-navy);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .quiz-btn:hover {
+      background: var(--theme-orange-light);
+      transform: translate(-1px, -1px);
+    }
+
+    .quiz-feedback {
+      margin-top: 1rem;
+      font-weight: 700;
+      display: none;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      border: 2px solid var(--border-dark);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    /* MODAL OVERLAY */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(11, 25, 44, 0.88);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    .modal-overlay.active { display: flex; }
+
+    /* SLIDE PRESENTATION DECK */
+    .slide-deck {
+      width: 100%;
+      max-width: 1080px;
+      height: 90vh;
+      background-color: #FFFCF7;
+      border: 3px solid #0B192C;
+      border-radius: 18px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 10px 10px 0px var(--theme-orange);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slide-deck-header {
+      background: #FFFFFF;
+      border-bottom: 2px solid var(--border-dark);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .slide-deck-content {
+      flex: 1;
+      padding: 2rem 2.75rem;
+      overflow-y: auto;
+      display: none;
+    }
+
+    .slide-deck-content.active {
+      display: block;
+      animation: fadeIn 0.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .slide-deck-footer {
+      background: #FFFFFF;
+      border-top: 2px solid var(--border-dark);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .slide-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      color: var(--theme-navy);
+    }
+
+    .slide-subtitle {
+      font-size: 1.05rem;
+      color: var(--theme-orange);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .slide-visual-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+
+    .slide-card-box {
+      background: #FFFFFF;
+      border: 2px solid var(--border-dark);
+      border-radius: var(--radius-sm);
+      padding: 1.1rem;
+      box-shadow: 3px 3px 0px var(--theme-navy);
+      margin-bottom: 0.75rem;
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+
+    /* MODAL TAMPILAN EVALUASI & KUNCI */
+    .reading-modal-container {
+      width: 100%;
+      max-width: 920px;
+      height: 90vh;
+      background-color: #FFFFFF;
+      border: 3px solid #000;
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 8px 8px 0px var(--theme-brown);
+      overflow: hidden;
+    }
+
+    .reading-modal-header {
+      background: var(--theme-brown-light);
+      border-bottom: 2px solid var(--border-dark);
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .reading-modal-body {
+      flex: 1;
+      padding: 2rem 2.25rem;
+      overflow-y: auto;
+      background: #FFFFFF;
+      color: #000;
+      font-size: 9.5pt;
+      line-height: 1.6;
+    }
+
+    .lecturer-auth-box {
+      background: #FFF7ED;
+      border: 2px dashed var(--theme-orange);
+      padding: 1rem 1.2rem;
+      border-radius: var(--radius-sm);
+      margin-top: 1.75rem;
+    }
+
+    .answer-key-content {
+      display: none;
+      background: #FEF3C7;
+      border: 2px solid var(--theme-brown);
+      border-radius: var(--radius-sm);
+      padding: 1.1rem;
+      margin-top: 0.85rem;
+    }
+
+    /* PRINT FORMAT */
+    @media print {
+      body * { visibility: hidden; }
+      #printableArea, #printableArea * { visibility: visible; }
+      #printableArea {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: #FFF !important;
+        padding: 12mm 15mm;
+      }
+      .lecturer-auth-box, .site-header, .modal-overlay, .no-print { display: none !important; }
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.65rem; }
+      .hero { padding: 1.25rem; }
+      .section-block { padding: 1.25rem; }
+      .quiz-options { grid-template-columns: 1fr; }
+      .slide-deck-content { padding: 1.25rem; }
+      .slide-title { font-size: 1.5rem; }
+      .slide-visual-grid { grid-template-columns: 1fr; }
+      .reading-modal-body { padding: 1.25rem; }
+      .nav-actions { width: 100%; justify-content: flex-start; }
+      .btn { flex: 1; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SITE HEADER / ACTION BAR -->
+  <header class="site-header no-print">
+    <div class="badge-course">
+      <span>🏛️</span> BK Anak Berkebutuhan Khusus • Pertemuan 5 (2 SKS)
+    </div>
+    <div class="nav-actions">
+      <button class="btn btn-presentation" onclick="openPresentation()">
+        <span>🖥️</span> Slide Presentasi Dosen
+      </button>
+      <button class="btn btn-worksheet" onclick="openReadingModal()">
+        <span>📖</span> Buka Soal Evaluasi &amp; Kunci Dosen
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN DOCUMENT CONTAINER -->
+  <div class="container no-print">
+
+    <!-- HERO BANNER -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-meta">
+            <span class="tag">Mata Kuliah: BK ABK</span>
+            <span class="tag">Alokasi Waktu: 2 SKS (100 Menit)</span>
+            <span class="tag">Tema: Oranye, Cokelat &amp; Dark Blue</span>
+            <span class="tag">Fokus: Bab II Poin A.3 (Landasan Yuridis)</span>
+          </div>
+          <h1>Landasan Yuridis dan Kebijakan Hak Pendidikan ABK di Indonesia</h1>
+          <p>Materi pertemuan kelima: membedah kepastian hukum hak pendidikan anak berkebutuhan khusus berlandaskan Pasal 31 UUD 1945, amanat UU Sisdiknas No. 20 Tahun 2003 (Pasal 5 Ayat 1 &amp; Pasal 32 Ayat 1), serta tanggung jawab profesi konselor dalam meruntuhkan diskriminasi penerimaan siswa di sekolah reguler[cite: 1].</p>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=700&q=80" alt="Landasan Hukum dan Keadilan" class="hero-illustration">
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE RENCANA PERKULIAHAN (100 MENIT) -->
+    <div class="timeline-card">
+      <div class="time-slot t1">
+        <span class="time">10 Menit</span>
+        <div class="title">Warming Up &amp; Konstitusi</div>
+        <small style="color:var(--text-muted)">Apersepsi UUD 1945: Tiap warga negara berhak mendapat pendidikan[cite: 1].</small>
+      </div>
+      <div class="time-slot t2">
+        <span class="time">45 Menit</span>
+        <div class="title">Materi Inti Yuridis</div>
+        <small style="color:var(--text-muted)">Analisis Pasal 5 ayat 1 &amp; Pasal 32 ayat 1 UU Sisdiknas[cite: 1].</small>
+      </div>
+      <div class="time-slot t3">
+        <span class="time">5 Menit</span>
+        <div class="title">Games Advokasi</div>
+        <small style="color:var(--text-muted)">Uji Respon Hukum: Menghadapi diskriminasi admisi sekolah[cite: 1].</small>
+      </div>
+      <div class="time-slot t4">
+        <span class="time">40 Menit</span>
+        <div class="title">Evaluasi &amp; Penutup</div>
+        <small style="color:var(--text-muted)">Pengerjaan 10 soal evaluasi yuridis, verifikasi sandi dosen, dan simpulan[cite: 1].</small>
+      </div>
+    </div>
+
+    <!-- SESI 1: PENDAHULUAN (10 MENIT) -->
+    <article class="section-block">
+      <div class="section-header">
+        <div class="section-num">01</div>
+        <div>
+          <h2>Pendahuluan: Kepastian Hukum bagi Setiap Insan (10 Menit)</h2>
+          <small style="color:var(--text-muted)">Hak Pendidikan sebagai Hak Asasi Fundamental yang Dilindungi Konstitusi[cite: 1]</small>
+        </div>
+      </div>
+      <p>Pendidikan bagi anak berkebutuhan khusus di Indonesia bukan sekadar bentuk kedermawanan sosial atau belas kasihan para pendidik, melainkan kewajiban hukum yang mengikat negara dan seluruh penyelenggara pendidikan[cite: 1]. Konstitusi tertinggi Republik Indonesia menempatkan hak belajar sebagai hak fundamental yang melekat pada martabat kemanusiaan setiap warga negara tanpa kecuali[cite: 1].</p>
+
+      <div class="quote-box">
+        "Dalam UUD 1945 pasal 31 ayat 1 disampaikan bahwa tiap warga Negara tanpa terkecuali apakah dia mengalami kelainan atau tidak mempunyai hak yang sama untuk memperoleh pendidikan[cite: 1]."
+        <span class="citation">— Febriani, Triyono, Handayani, &amp; Hidayat (2024, Bab II Halaman 12)[cite: 1]</span>
+      </div>
+
+      <p>Penegasan konstitusi ini membongkar segala bentuk pembenaran pihak sekolah yang menolak anak berkebutuhan khusus dengan alasan keterbatasan fisik, sensori, maupun intelektual[cite: 1]. Guru BK memegang peranan krusial sebagai advokat yuridis peserta didik dalam memastikan aksesibilitas pendidikan dapat terwujud secara nyata[cite: 1].</p>
+    </article>
+
+    <!-- SESI 2: MATERI INTI (45 MENIT) -->
+    <article class="section-block">
+      <div class="section-header">
+        <div class="section-num">02</div>
+        <div>
+          <h2>Materi Inti: Payung Hukum UU Sisdiknas No. 20 Tahun 2003 (45 Menit)</h2>
+          <small style="color:var(--text-muted)">Telaah Rinci Pasal 5 dan Pasal 32 dalam Penyelenggaraan Pendidikan Khusus[cite: 1]</small>
+        </div>
+      </div>
+
+      <p>Mengacu langsung pada <strong>Buku Ajar Bab II Halaman 12</strong>, pemerintah mengeluarkan payung regulasi operasional yaitu Undang-Undang No. 20 Tahun 2003 tentang Sistem Pendidikan Nasional yang mengatur secara spesifik hak dan layanan pendidikan khusus[cite: 1]:</p>
+
+      <!-- PASAL 5 AYAT 1 -->
+      <h3>A. BAB IV Pasal 5 Ayat 1: Kesetaraan Hak atas Pendidikan Bermutu</h3>
+      <p>Pasal ini menegaskan kesetaraan derajat setiap individu di hadapan sistem pendidikan nasional[cite: 1]:</p>
+
+      <div class="quote-box">
+        "Setiap warga Negara mempunyai hak yang sama untuk memperoleh pendidikan yang bermutu baik yang memiliki kelainan fisik, emosional, mental, intelektual atau sosial berhak memperoleh pendidikan khusus[cite: 1]."
+        <span class="citation">— UU No. 20/2003 BAB IV Pasal 5 Ayat 1 (Febriani et al., 2024, hlm. 12)[cite: 1]</span>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-item accent-navy">
+          <strong>1. Hak yang Setara (Equal Rights)</strong>
+          Tidak ada dikotomi hak antara anak normal dan anak berkebutuhan khusus[cite: 1]. Keduanya memiliki hak konstitusional yang persis sama untuk dididik[cite: 1].
+        </div>
+        <div class="feature-item accent-orange">
+          <strong>2. Mutu Pendidikan yang Sama</strong>
+          Pendidikan bagi ABK bukan sekadar "penitipan anak", melainkan wajib memenuhi standar mutu pembelajaran yang bermakna bagi masa depan anak[cite: 1].
+        </div>
+        <div class="feature-item accent-brown">
+          <strong>3. Cakupan Luas Kelainan</strong>
+          Melindungi hak anak dengan spektrum gangguan fisik (tunanetra, tunarungu, tunadaksa), emosional (tunalaras), mental intelektual (tunagrahita), hingga hambatan sosial[cite: 1].
+        </div>
+      </div>
+
+      <!-- PASAL 32 AYAT 1 -->
+      <h3>B. BAB V Bagian 11 Pasal 32 Ayat 1: Mandat Penyelenggaraan Pendidikan Khusus</h3>
+      <p>Pasal 32 mendefinisikan subjek penerima dan ruang lingkup penyelenggaraan pendidikan khusus[cite: 1]:</p>
+
+      <div class="quote-box">
+        "Pendidikan khusus bagi peserta yang memiliki tingkat kesulitan dalam mengikuti proses pembelajaran karena kelainan fisik, emosional, mental, sosial, atau memiliki potensi kecerdasan[cite: 1]."
+        <span class="citation">— UU No. 20/2003 BAB V Bagian 11 Pasal 32 Ayat 1 (Febriani et al., 2024, hlm. 12)[cite: 1]</span>
+      </div>
+
+      <div class="example-box">
+        <strong>Pembedahan Yuridis Pasal 32 Ayat 1:</strong><br>
+        • <em>Penyebab Kesulitan Belajar:</em> Menjangkau anak yang mengalami hambatan belajar akibat kerusakan organ biologis, disfungsi neurologis, gangguan regulasi perilaku, maupun kondisi sosial ekonomi ekstrem[cite: 1].<br>
+        • <em>Kelompok Cerdas &amp; Berbakat Istimewa (Gifted):</em> Pendidikan khusus tidak hanya diperuntukkan bagi mereka yang mengalami keterbatasan (di bawah rata-rata), tetapi juga menjadi payung hukum layanan khusus bagi peserta didik yang memiliki potensi kecerdasan luar biasa di atas rata-rata[cite: 1].
+      </div>
+
+      <!-- IMPLIKASI YURIDIS BAGI GURU BK -->
+      <h3>C. Implikasi Yuridis terhadap Profesi Konselor Sekolah</h3>
+      <p>Keberadaan payung hukum ini menuntut transformasi etis bagi satuan pendidikan dan profesi konseling[cite: 1]:</p>
+      <ul class="detailed-list">
+        <li><strong>Larangan Penolakan Siswa (Anti-Diskriminasi):</strong> Menolak peserta didik berkebutuhan khusus di sekolah reguler merupakan pelanggaran terhadap konstitusi UUD 1945 Pasal 31 dan UU Sisdiknas Pasal 5[cite: 1].</li>
+        <li><strong>Kewajiban Akomodasi yang Layak:</strong> Sekolah berkewajiban memodifikasi sarana, metode instruksional, serta materi ujian agar ramah disabilitas[cite: 1].</li>
+        <li><strong>Fungsi Advokasi Konseling:</strong> Guru BK bertindak sebagai pembela hak belajar anak (advokat), menjembatani koordinasi antara orang tua, guru kelas, kepala sekolah, dan dinas pendidikan[cite: 1].</li>
+      </ul>
+    </article>
+
+    <!-- SESI 3: GAMES INTERAKTIF (5 MENIT) -->
+    <article class="section-block">
+      <div class="section-header">
+        <div class="section-num">03</div>
+        <div>
+          <h2>Games Interaktif: Uji Advokasi Yuridis Konselor (5 Menit)</h2>
+          <small style="color:var(--text-muted)">Penegakan Payung Hukum dalam Kasus Admisi Siswa[cite: 1]</small>
+        </div>
+      </div>
+      <div class="game-card">
+        <h4>⚡ Uji Pemahaman Kasus Pelanggaran Regulasi</h4>
+        <p style="margin-top:0.4rem">Sebuah panitia Penerimaan Peserta Didik Baru (PPDB) di sekolah negeri menolak berkas calon siswa tunanetra dengan alasan "Sekolah reguler ini dibangun hanya untuk anak yang normal, bukan anak cacat"[cite: 1]. Sebagai calon Guru BK yang memahami landasan yuridis Bab II, argumen hukum manakah yang paling kuat untuk menggugat keputusan tersebut[cite: 1]?</p>
+        <div class="quiz-options">
+          <button class="quiz-btn" onclick="checkAnswer(false)">A. Membiarkan penolakan tersebut karena sekolah negeri memiliki hak prerogatif penuh menolak siswa mana pun.</button>
+          <button class="quiz-btn" onclick="checkAnswer(true)">B. Menolak keputusan tersebut karena melanggar Pasal 31 UUD 1945 dan Pasal 5 Ayat 1 UU Sisdiknas yang menjamin hak setara tiap warga negara atas pendidikan bermutu tanpa terkecuali[cite: 1].</button>
+          <button class="quiz-btn" onclick="checkAnswer(false)">C. Menyarankan orang tua siswa untuk membayar uang suap agar anaknya bisa diterima.</button>
+          <button class="quiz-btn" onclick="checkAnswer(false)">D. Meminta anak tersebut bersekolah secara mandiri di rumah tanpa perlu ijazah.</button>
+        </div>
+        <div id="quiz-feedback" class="quiz-feedback"></div>
+      </div>
+    </article>
+
+    <!-- SESI 4: TANYA JAWAB & CLOSING -->
+    <article class="section-block">
+      <div class="section-header">
+        <div class="section-num">04</div>
+        <div>
+          <h2>Tanya Jawab &amp; Closing Statement</h2>
+          <small style="color:var(--text-muted)">Komitmen Menegakkan Hak Asasi dalam Pendidikan[cite: 1]</small>
+        </div>
+      </div>
+      <p><strong>Fokus Diskusi Kelas:</strong></p>
+      <ul class="detailed-list">
+        <li>Bagaimana hierarki hukum dari UUD 1945 Pasal 31 mengikat kebijakan operasional sekolah negeri maupun swasta[cite: 1]?</li>
+        <li>Mengapa anak dengan "potensi kecerdasan luar biasa" (gifted) juga dicantumkan sebagai subjek yang berhak atas pendidikan khusus dalam Pasal 32 UU Sisdiknas[cite: 1]?</li>
+      </ul>
+      <div class="quote-box" style="border-left-color: var(--theme-orange); background-color: var(--theme-orange-light);">
+        "Hukum bukanlah deretan teks mati di atas kertas undang-undang, melainkan perisai hidup yang melindungi anak-anak berkebutuhan khusus dari kesewenang-wenangan diskriminasi[cite: 1]. Tugas konselor adalah menghidupkan amanat konstitusi tersebut di setiap ruang kelas[cite: 1]."
+        <span class="citation">— Penutup Perkuliahan Pertemuan ke-5[cite: 1]</span>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- PRESENTATION MODAL (SLIDE DECK) -->
+  <div id="presentationModal" class="modal-overlay">
+    <div class="slide-deck">
+      <div class="slide-deck-header">
+        <div style="font-weight:800; font-size:1.05rem; display:flex; align-items:center; gap:0.5rem;">
+          <span style="background:var(--theme-navy); color:#FFF; border:1.5px solid #000; padding:2px 8px; border-radius:6px;">Slide Deck</span>
+          <span>Pertemuan V: Landasan Yuridis BK ABK di Indonesia[cite: 1]</span>
+        </div>
+        <button class="btn btn-worksheet" style="padding:0.35rem 0.8rem; font-size:0.8rem;" onclick="closePresentation()">Keluar (Esc)</button>
+      </div>
+
+      <!-- SLIDE 1: SAMPUL -->
+      <div class="slide-deck-content active" id="slide-1">
+        <div class="slide-subtitle">MATA KULIAH: BIMBINGAN KONSELING ABK (2 SKS)</div>
+        <h1 class="slide-title">Landasan Yuridis Pendidikan ABK di Indonesia</h1>
+        <div class="slide-visual-grid">
+          <div>
+            <p style="font-size:1.05rem; margin-bottom:1.25rem;">Menelusuri jaminan konstitusi UUD 1945 Pasal 31 ayat 1 serta regulasi turunan UU Sisdiknas No. 20 Tahun 2003 (Pasal 5 &amp; Pasal 32) yang menjamin hak kesetaraan pendidikan tanpa diskriminasi[cite: 1].</p>
+            <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+              <span class="tag" style="background:var(--theme-orange-light)">Durasi: 100 Menit</span>
+              <span class="tag" style="background:var(--theme-navy-light)">Rujukan: Bab II Halaman 12[cite: 1]</span>
+            </div>
+          </div>
+          <div>
+            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80" alt="Slide Sampul" style="width:100%; border:2px solid #000; border-radius:10px; box-shadow:4px 4px 0px var(--theme-navy);">
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2: UUD 1945 PASAL 31 -->
+      <div class="slide-deck-content" id="slide-2">
+        <div class="slide-subtitle">KONSTITUSI TERTINGGI REPUBLIK INDONESIA</div>
+        <h2 class="slide-title">UUD 1945 Pasal 31 Ayat 1</h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; margin-top:0.85rem;">
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-orange-dark); display:block; margin-bottom:0.25rem;">Tiap Warga Negara</strong>
+            Konstitusi tidak mengenal kasta atau pengistimewaan. Semua individu memegang status hukum yang setara di mata negara[cite: 1].
+          </div>
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-navy); display:block; margin-bottom:0.25rem;">Tanpa Terkecuali</strong>
+            Apakah seseorang mengalami ketunaan atau tidak, hak memperoleh pendidikan adalah mutlak dan tidak dapat dikurangi[cite: 1].
+          </div>
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-brown); display:block; margin-bottom:0.25rem;">Kewajiban Negara</strong>
+            Pemerintah dan institusi persekolahan berkewajiban menyediakan akses dan fasilitas belajar yang memadai[cite: 1].
+          </div>
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-orange-dark); display:block; margin-bottom:0.25rem;">Aspek Keadilan Sosial</strong>
+            Mewujudkan keadilan distributif bagi kelompok rentan dan minoritas disabilitas[cite: 1].
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3: PASAL 5 AYAT 1 -->
+      <div class="slide-deck-content" id="slide-3">
+        <div class="slide-subtitle">UNDANG-UNDANG SISDIKNAS NO. 20/2003</div>
+        <h2 class="slide-title">BAB IV Pasal 5 Ayat 1</h2>
+        <div class="slide-visual-grid">
+          <div>
+            <ul class="detailed-list" style="font-size:0.98rem; line-height:1.7;">
+              <li><strong>Hak atas Pendidikan Bermutu:</strong> Warga negara yang memiliki kelainan fisik, emosional, mental, intelektual, dan/atau sosial berhak atas pendidikan bermutu[cite: 1].</li>
+              <li>Bukan sekadar formalitas masuk sekolah, melainkan mendapatkan pengajaran yang berkualitas dan terukur[cite: 1].</li>
+              <li>Hak memperoleh <strong>Pendidikan Khusus</strong> sebagai wujud penyesuaian layanan terhadap kebutuhan unik peserta didik[cite: 1].</li>
+            </ul>
+          </div>
+          <div>
+            <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80" alt="Slide Pasal 5" style="width:100%; border:2px solid #000; border-radius:10px; box-shadow:4px 4px 0px var(--theme-brown);">
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 4: PASAL 32 AYAT 1 -->
+      <div class="slide-deck-content" id="slide-4">
+        <div class="slide-subtitle">LAYANAN PENDIDIKAN KHUSUS</div>
+        <h2 class="slide-title">BAB V Pasal 32 Ayat 1</h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; margin-top:0.85rem;">
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-navy); display:block; margin-bottom:0.3rem;">Kesulitan Mengikuti Pembelajaran</strong>
+            Pendidikan khusus diselenggarakan bagi peserta didik yang menghadapi hambatan belajar akibat kelainan tubuh/pikiran[cite: 1].
+          </div>
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-orange-dark); display:block; margin-bottom:0.3rem;">Potensi Kecerdasan Istimewa</strong>
+            Secara yuridis, anak berbakat (gifted) juga berhak atas pendidikan khusus guna memfasilitasi kecepatan belajarnya[cite: 1].
+          </div>
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-brown); display:block; margin-bottom:0.3rem;">Akomodasi &amp; Aksesibilitas</strong>
+            Sekolah berkewajiban merancang kurikulum yang fleksibel dan ramah bagi disabilitas[cite: 1].
+          </div>
+          <div class="slide-card-box">
+            <strong style="color:var(--theme-navy); display:block; margin-bottom:0.3rem;">Perlindungan Non-Diskriminasi</strong>
+            Menjadi senjata hukum menindak satuan pendidikan yang menolak siswa disabilitas[cite: 1].
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 5: SIMPULAN & AKSI -->
+      <div class="slide-deck-content" id="slide-5">
+        <div class="slide-subtitle">MANDAT PROFESI KONSELI</div>
+        <h2 class="slide-title">Sintesis Yuridis &amp; Advokasi Guru BK</h2>
+        <div class="quote-box" style="font-size:1.05rem; margin-top:1.25rem;">
+          "Guru BK memiliki legitimasi yuridis yang kokoh untuk membela hak setiap anak berkebutuhan khusus[cite: 1]. Sekolah inklusi adalah perintah undang-undang, bukan sekadar pilihan sukarela[cite: 1]."
+        </div>
+        <p style="margin-top:1.5rem; font-size:0.98rem;">
+          <strong>Aktivitas Mandiri:</strong> Silakan buka tombol evaluasi untuk mengerjakan 10 butir soal pemahaman yuridis mandiri[cite: 1]. Dosen pengampu dapat membuka lembar kunci melalui sandi verifikasi resmi[cite: 1].
+        </p>
+      </div>
+
+      <!-- FOOTER CONTROLS -->
+      <div class="slide-deck-footer">
+        <div style="font-weight:700;" id="slideIndicator">Slide 1 dari 5</div>
+        <div style="display:flex; gap:0.5rem;">
+          <button class="btn" onclick="prevSlide()">◀ Sebelumnya</button>
+          <button class="btn btn-presentation" onclick="nextSlide()">Berikutnya ▶</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL BACA & CETAK: SOAL EVALUASI 10 PG + KUNCI DOSEN -->
+  <div id="readingModal" class="modal-overlay">
+    <div class="reading-modal-container">
+      <div class="reading-modal-header">
+        <div style="font-weight:800; font-size:1rem; display:flex; align-items:center; gap:0.5rem; color:var(--theme-navy);">
+          <span>📄 Lembar Evaluasi &amp; Kunci Dosen: Landasan Yuridis Pendidikan ABK[cite: 1]</span>
+        </div>
+        <div style="display:flex; gap:0.5rem;">
+          <button class="btn btn-worksheet" style="padding:0.35rem 0.8rem; font-size:0.82rem;" onclick="triggerPrint()">
+            🖨️ Cetak Lembar Soal (PDF)
+          </button>
+          <button class="btn" style="padding:0.35rem 0.8rem; font-size:0.82rem;" onclick="closeReadingModal()">
+            Tutup (Esc)
+          </button>
+        </div>
+      </div>
+      
+      <!-- AREA DOKUMEN EVALUASI -->
+      <div class="reading-modal-body" id="printableArea">
+        <div style="text-align:center; border-bottom:2px solid #000; padding-bottom:10px; margin-bottom:16px;">
+          <h2 style="font-size:14pt; font-weight:800; text-transform:uppercase; margin-bottom:3px;">Evaluasi Perkuliahan: Landasan Yuridis Pendidikan ABK</h2>
+          <h3 style="font-size:11pt; font-weight:600; margin-bottom:3px;">Mata Kuliah: Bimbingan dan Konseling ABK • Pertemuan 5</h3>
+          <p style="font-size:9pt; color:#333;">Materi: Bab II Poin A.3 (Buku Pendidikan Anak Berkebutuhan Khusus Halaman 12)[cite: 1]</p>
+        </div>
+
+        <table style="width:100%; margin-bottom:12px; font-size:9.5pt; border-collapse:collapse;">
+          <tr>
+            <td style="width:140px; padding:2px 0;"><strong>Nama Mahasiswa</strong></td>
+            <td style="padding:2px 0;">: .................................................................................</td>
+            <td style="width:80px; padding:2px 0;"><strong>NIM</strong></td>
+            <td style="padding:2px 0;">: ......................................</td>
+          </tr>
+          <tr>
+            <td style="padding:2px 0;"><strong>Program Studi</strong></td>
+            <td style="padding:2px 0;">: .................................................................................</td>
+            <td style="padding:2px 0;"><strong>Kelas</strong></td>
+            <td style="padding:2px 0;">: ......................................</td>
+          </tr>
+        </table>
+
+        <div style="margin-bottom:12px; font-size:9pt; background:#FFF7ED; padding:6px 10px; border:1px solid #FED7AA; border-radius:4px;">
+          <strong>Petunjuk Mengerjakan:</strong> Pilihlah satu jawaban yang paling tepat (A, B, C, atau D) dengan memberi tanda silang (X) atau melingkari huruf pilihan Anda[cite: 1]!
+        </div>
+
+        <!-- 10 SOAL PILIHAN GANDA -->
+        <div style="font-size:9pt; line-height:1.5;">
+
+          <!-- SOAL 1 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>1. Ketentuan UUD 1945 Pasal 31 Ayat 1 secara tegas menyatakan bahwa...[cite: 1]</strong></p>
+            <div style="padding-left:15px;">
+              A. Pendidikan hanya diwajibkan bagi warga negara yang memiliki fisik sempurna<br>
+              B. Tiap warga negara tanpa terkecuali, mengalami kelainan atau tidak, mempunyai hak yang sama untuk memperoleh pendidikan[cite: 1]<br>
+              C. Sekolah negeri dibebaskan menolak siswa penyandang disabilitas<br>
+              D. Biaya pendidikan khusus sepenuhnya ditanggung oleh keluarga siswa
+            </div>
+          </div>
+
+          <!-- SOAL 2 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>2. Berdasarkan UU Sisdiknas No. 20 Tahun 2003 BAB IV Pasal 5 Ayat 1, warga negara yang memiliki kelainan fisik, emosional, mental, intelektual, dan/atau sosial berhak...[cite: 1]</strong></p>
+            <div style="padding-left:15px;">
+              A. Ditempatkan di tempat rehabilitasi medis tanpa kurikulum<br>
+              B. Memperoleh pendidikan khusus dan pendidikan yang bermutu[cite: 1]<br>
+              C. Menolak mengikuti program wajib belajar pemerintah<br>
+              D. Memperoleh ijazah tanpa perlu mengikuti proses pembelajaran
+            </div>
+          </div>
+
+          <!-- SOAL 3 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>3. Rumusan BAB V Bagian 11 Pasal 32 Ayat 1 UU No. 20 Tahun 2003 mengatur tentang penyelenggaraan pendidikan khusus bagi...[cite: 1]</strong></p>
+            <div style="padding-left:15px;">
+              A. Siswa yang bermasalah dengan hukum pidana saja<br>
+              B. Peserta didik yang memiliki tingkat kesulitan dalam mengikuti proses pembelajaran karena kelainan fisik, emosional, mental, sosial, atau memiliki potensi kecerdasan[cite: 1]<br>
+              C. Tenaga pendidik yang belum memiliki sertifikasi profesi guru<br>
+              D. Sekolah yang kekurangan sarana laboratorium sains
+            </div>
+          </div>
+
+          <!-- SOAL 4 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>4. Mengapa peserta didik yang memiliki "potensi kecerdasan luar biasa" (gifted) dimasukkan ke dalam ranah pendidikan khusus pada Pasal 32 Ayat 1?[cite: 1]</strong></p>
+            <div style="padding-left:15px;">
+              A. Karena mereka mengalami kerusakan sistem saraf otak<br>
+              B. Karena mereka membutuhkan kurikulum dan layanan khusus untuk mengembangkan potensi superiornya yang melampaui anak rata-rata[cite: 1]<br>
+              C. Agar mereka tidak perlu masuk ke perguruan tinggi<br>
+              D. Karena mereka tidak mampu bergaul dengan masyarakat biasa
+            </div>
+          </div>
+
+          <!-- SOAL 5 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>5. Sifat jaminan hak pendidikan bagi ABK dalam Pasal 31 UUD 1945 berkedudukan sebagai...[cite: 1]</strong></p>
+            <div style="padding-left:15px;">
+              A. Hadiah sukarela dari penyelenggara sekolah swasta<br>
+              B. Kebijakan sementara yang dapat dicabut sewaktu-waktu<br>
+              C. Hak asasi konstitusional yang mutlak dan dilindungi oleh hukum tertinggi negara[cite: 1]<br>
+              D. Rekomendasi non-formal yang tidak mengikat pemerintah
+            </div>
+          </div>
+
+          <!-- SOAL 6 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>6. Jika sebuah sekolah inklusi menolak seorang anak tunarungu karena dianggap merepotkan guru, maka sekolah tersebut secara yuridis melanggar...[cite: 1]</strong></p>
+            <div style="padding-left:15px;">
+              A. Hukum adat setempat semata<br>
+              B. UUD 1945 Pasal 31 dan UU No. 20 Tahun 2003 Pasal 5 Ayat 1[cite: 1]<br>
+              C. Peraturan lalu lintas jalan raya<br>
+              D. Tata tertib kepegawaian tata usaha
+            </div>
+          </div>
+
+          <!-- SOAL 7 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>7. Makna frasa "memperoleh pendidikan yang bermutu" pada Pasal 5 Ayat 1 bagi anak berkebutuhan khusus adalah...[cite: 1]</strong></p>
+            <div style="padding-left:15px;">
+              A. Sekolah harus menyediakan gedung yang mewah dan serba mahal<br>
+              B. Anak berhak atas pembelajaran adaptif, media yang aksesibel, dan pendampingan bimbingan konseling yang bermakna[cite: 1]<br>
+              C. Nilai ujian anak berkebutuhan khusus wajib dibuat 100 secara otomatis<br>
+              D. Anak hanya diajarkan keterampilan baris-berbaris
+            </div>
+          </div>
+
+          <!-- SOAL 8 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>8. Subjek kelainan yang diakui secara yuridis berhak atas pendidikan khusus dalam UU Sisdiknas mencakup dimensi...[cite: 1]</strong></p>
+            <div style="padding-left:15px;">
+              A. Fisik, emosional, mental, intelektual, dan sosial[cite: 1]<br>
+              B. Kelainan status kewarganegaraan asing saja<br>
+              C. Perbedaan preferensi politik dan suku bangsa<br>
+              D. Ketidakmampuan membayar uang seragam sekolah
+            </div>
+          </div>
+
+          <!-- SOAL 9 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>9. Peran profesional Guru Bimbingan dan Konseling dalam menegakkan landasan yuridis di sekolah adalah...[cite: 1]</strong></p>
+            <div style="padding-left:15px;">
+              A. Menjadi advokat yang menjamin terpenuhinya hak-hak peserta didik berkebutuhan khusus tanpa diskriminasi[cite: 1]<br>
+              B. Membantu kepala sekolah menyeleksi dan menolak anak disabilitas<br>
+              C. Mengisolasi anak berkebutuhan khusus agar tidak bertemu dengan siswa lain<br>
+              D. Menetapkan hukuman fisik bagi siswa yang mengalami kesulitan belajar
+            </div>
+          </div>
+
+          <!-- SOAL 10 -->
+          <div style="margin-bottom:10px;">
+            <p><strong>10. Berdasarkan UU Sisdiknas No. 20 Tahun 2003, pendidikan khusus diselenggarakan dengan tujuan utama untuk...[cite: 1]</strong></p>
+            <div style="padding-left:15px;">
+              A. Memfasilitasi kesulitan proses pembelajaran akibat kelainan serta memaksimalkan potensi kecerdasan istimewa[cite: 1]<br>
+              B. Memisahkan siswa pintar dengan siswa yang memiliki hambatan<br>
+              C. Menghilangkan keberadaan sekolah inklusi di Indonesia<br>
+              D. Menyerahkan urusan pendidikan sepenuhnya kepada instansi kesehatan
+            </div>
+          </div>
+
+        </div>
+
+        <!-- VERIFIKASI DOSEN KHUSUS UNTUK MEMBUKA KUNCI -->
+        <div class="lecturer-auth-box">
+          <div style="font-weight:700; color:var(--theme-navy); margin-bottom:0.35rem;">
+            🔒 Kunci Jawaban Resmi (Akses Khusus Dosen Pengampu)
+          </div>
+          <p style="font-size:8.5pt; margin-bottom:0.5rem; color:var(--text-muted);">
+            Masukkan kode verifikasi dosen untuk membuka kunci jawaban dan pembahasan Bab II Poin A.3:
+          </p>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+            <input type="password" id="lecturerPass" placeholder="Masukkan Sandi Dosen..." style="padding:0.35rem 0.75rem; border:1.5px solid var(--border-dark); border-radius:4px; font-size:8.5pt;">
+            <button class="btn btn-presentation" style="padding:0.35rem 0.85rem; font-size:8pt;" onclick="unlockAnswerKey()">Verifikasi Sandi</button>
+          </div>
+          
+          <div id="keyContent" class="answer-key-content">
+            <h4 style="color:var(--theme-brown-dark); margin-bottom:0.4rem; font-size:10pt;">Kunci Jawaban 10 Soal Evaluasi (Bab II Poin A.3):[cite: 1]</h4>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap:0.35rem; font-size:8.5pt; font-weight:700;">
+              <div>1. B (Pasal 31 UUD 1945)[cite: 1]</div>
+              <div>2. B (Pendidikan Bermutu)[cite: 1]</div>
+              <div>3. B (Pasal 32 Sisdiknas)[cite: 1]</div>
+              <div>4. B (Layanan Potensi Unggul)[cite: 1]</div>
+              <div>5. C (Hak Konstitusional)[cite: 1]</div>
+              <div>6. B (Pelanggaran Hukum)[cite: 1]</div>
+              <div>7. B (Akomodasi Bermakna)[cite: 1]</div>
+              <div>8. A (Dimensi Lengkap Sisdiknas)[cite: 1]</div>
+              <div>9. A (Fungsi Advokasi BK)[cite: 1]</div>
+              <div>10. A (Tujuan Pendidikan Khusus)[cite: 1]</div>
+            </div>
+            <div style="margin-top:0.6rem; font-size:8pt; color:#78350F; font-style:italic;">
+              *Catatan Dosen: Kunci telah diverifikasi sesuai Buku Pendidikan Anak Berkebutuhan Khusus Bab II Halaman 12[cite: 1].
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:20px; display:flex; justify-content:space-between; font-size:9pt;">
+          <div>
+            <strong>Tanda Tangan Mahasiswa:</strong><br><br><br>
+            (.......................................................)
+          </div>
+          <div style="text-align:center;">
+            <strong>Verifikasi Nilai Dosen Pengampu:</strong><br><br><br>
+            (.......................................................)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT CONTROLLER -->
+  <script>
+    /* SLIDE PRESENTATION LOGIC */
+    let currentSlide = 1;
+    const totalSlides = 5;
+
+    function openPresentation() {
+      document.getElementById('presentationModal').classList.add('active');
+      showSlide(currentSlide);
+    }
+
+    function closePresentation() {
+      document.getElementById('presentationModal').classList.remove('active');
+    }
+
+    function showSlide(index) {
+      for (let i = 1; i <= totalSlides; i++) {
+        const slide = document.getElementById('slide-' + i);
+        if (slide) slide.classList.remove('active');
+      }
+      const activeSlide = document.getElementById('slide-' + index);
+      if (activeSlide) activeSlide.classList.add('active');
+      document.getElementById('slideIndicator').innerText = `Slide ${index} dari ${totalSlides}`;
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        showSlide(currentSlide);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        showSlide(currentSlide);
+      }
+    }
+
+    /* READING & PRINT MODAL LOGIC */
+    function openReadingModal() {
+      document.getElementById('readingModal').classList.add('active');
+    }
+
+    function closeReadingModal() {
+      document.getElementById('readingModal').classList.remove('active');
+    }
+
+    function triggerPrint() {
+      window.print();
+    }
+
+    // Keyboard navigation (Esc & Arrows)
+    document.addEventListener('keydown', function(e) {
+      const presModal = document.getElementById('presentationModal');
+      const readModal = document.getElementById('readingModal');
+
+      if (presModal.classList.contains('active')) {
+        if (e.key === 'ArrowRight' || e.key === 'Space') {
+          nextSlide();
+        } else if (e.key === 'ArrowLeft') {
+          prevSlide();
+        } else if (e.key === 'Escape') {
+          closePresentation();
+        }
+      } else if (readModal.classList.contains('active')) {
+        if (e.key === 'Escape') {
+          closeReadingModal();
+        }
+      }
+    });
+
+    /* QUIZ PEMBUKA LOGIC */
+    function checkAnswer(isCorrect) {
+      const feedback = document.getElementById('quiz-feedback');
+      feedback.style.display = 'block';
+      if (isCorrect) {
+        feedback.style.backgroundColor = '#FFEDD5';
+        feedback.style.borderColor = '#EA580C';
+        feedback.style.color = '#7C2D12';
+        feedback.innerText = '✅ TEPAT SEKALI! Mengacu pada Halaman 12, UUD 1945 Pasal 31 dan UU No. 20/2003 Pasal 5 menjamin bahwa setiap warga negara tanpa terkecuali berhak atas pendidikan bermutu, sehingga penolakan oleh pihak sekolah merupakan pelanggaran konstitusional[cite: 1].';
+      } else {
+        feedback.style.backgroundColor = '#FEE2E2';
+        feedback.style.borderColor = '#DC2626';
+        feedback.style.color = '#991B1B';
+        feedback.innerText = '❌ KURANG TEPAT. Ingat kembali amanat Bab II Halaman 12: Setiap warga negara tanpa terkecuali mempunyai hak konstitusional yang sama untuk memperoleh pendidikan khusus yang bermutu[cite: 1].';
+      }
+    }
+
+    /* VERIFIKASI KUNCI JAWABAN DOSEN */
+    function unlockAnswerKey() {
+      const pass = document.getElementById('lecturerPass').value;
+      const keyBox = document.getElementById('keyContent');
+      // Password khusus dosen Pertemuan 5: DOSENBK5
+      if (pass === 'DOSENBK5' || pass === 'dosenbk5') {
+        keyBox.style.display = 'block';
+        alert('Kunci jawaban Bab II (Landasan Yuridis) berhasil dibuka.');
+      } else {
+        alert('Sandi salah. Akses kunci jawaban hanya diperuntukkan bagi dosen pengampu.');
+      }
+    }
+  </script>
+</body>
+</html>
